@@ -19,6 +19,12 @@ layout_mode = 2
 [node name="buyable_sellable_button2" parent="SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
 
+[node name="buyable_sellable_button3" parent="SellColumn" unique_id=68767264 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="buyable_sellable_button4" parent="SellColumn" unique_id=504236223 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
 [node name="BuyColumn" parent="." unique_id=1243617289 instance=ExtResource("2_8xrdf")]
 layout_mode = 2
 size_flags_horizontal = 3

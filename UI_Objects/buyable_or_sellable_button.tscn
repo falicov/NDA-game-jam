@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bjxpxutmipf14"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_48knx"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_kiids"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr6r1"]
+texture = ExtResource("1_kiids")
 
 [node name="buyable_sellable_button" type="Button" unique_id=700522243]
+custom_minimum_size = Vector2(100, 150)
 offset_right = 202.0
 offset_bottom = 260.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-icon = SubResource("PlaceholderTexture2D_48knx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qr6r1")
 expand_icon = true
