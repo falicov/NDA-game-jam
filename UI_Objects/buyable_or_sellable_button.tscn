@@ -6,9 +6,8 @@
 texture = ExtResource("1_kiids")
 
 [node name="buyable_sellable_button" type="Button" unique_id=700522243]
-custom_minimum_size = Vector2(100, 150)
+custom_minimum_size = Vector2(75, 175)
 offset_right = 202.0
 offset_bottom = 260.0
-size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_qr6r1")
 expand_icon = true
