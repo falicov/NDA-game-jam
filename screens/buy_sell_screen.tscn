@@ -46,29 +46,29 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="SellLabel" type="Label" parent="." unique_id=182146158]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=43109664]
 layout_mode = 0
-offset_left = 20.0
-offset_right = 152.0
-offset_bottom = 83.0
-theme_override_font_sizes/font_size = 60
-text = "Sell"
-uppercase = true
-
-[node name="BuyLabel" type="Label" parent="." unique_id=1084782570]
-layout_mode = 0
-offset_left = 477.0
-offset_right = 609.0
-offset_bottom = 83.0
-theme_override_font_sizes/font_size = 60
-text = "Sell"
-uppercase = true
-
-[node name="Button" type="Button" parent="." unique_id=2004102635]
-layout_mode = 0
-offset_left = 923.0
 offset_right = 1152.0
 offset_bottom = 90.0
+
+[node name="SellLabel" type="Label" parent="HBoxContainer2" unique_id=397946065]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "Sell"
+uppercase = true
+
+[node name="BuyLabel" type="Label" parent="HBoxContainer2" unique_id=1538776194]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "Sell"
+uppercase = true
+
+[node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_8xrdf")
 text = "Start Mining!"
