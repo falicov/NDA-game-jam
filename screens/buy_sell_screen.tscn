@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c2gljkeejt128"]
+
+[ext_resource type="PackedScene" uid="uid://bjxpxutmipf14" path="res://UI_Objects/buyable_or_sellable_button.tscn" id="1_ou6qf"]
+[ext_resource type="PackedScene" uid="uid://oker8qek142o" path="res://UI_Objects/buy_sell_column.tscn" id="2_8xrdf"]
+
+[node name="BuySellScreen" type="HBoxContainer" unique_id=1710120714]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SellColumn" parent="." unique_id=1624477306 instance=ExtResource("2_8xrdf")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="buyable_sellable_button" parent="SellColumn" unique_id=700522243 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="buyable_sellable_button2" parent="SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="BuyColumn" parent="." unique_id=1243617289 instance=ExtResource("2_8xrdf")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="." unique_id=1625025410]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5

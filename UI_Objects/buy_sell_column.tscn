@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://oker8qek142o"]
+
+[node name="BuySellColumn" type="GridContainer" unique_id=1624477306]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2

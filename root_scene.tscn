@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://db10n8gyjvrsp"]
+
+[ext_resource type="PackedScene" uid="uid://c2gljkeejt128" path="res://screens/buy_sell_screen.tscn" id="1_itajj"]
+
+[node name="root_scene" type="Node2D" unique_id=217576608]
+
+[node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("1_itajj")]
