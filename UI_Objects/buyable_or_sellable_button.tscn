@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjxpxutmipf14"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_kiids"]
+[ext_resource type="Script" uid="uid://cd5qhxfg7pw6e" path="res://Scripts/buyable_or_sellable_button.gd" id="2_qr6r1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr6r1"]
 texture = ExtResource("1_kiids")
@@ -9,5 +10,7 @@ texture = ExtResource("1_kiids")
 custom_minimum_size = Vector2(75, 175)
 offset_right = 202.0
 offset_bottom = 260.0
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_qr6r1")
 expand_icon = true
+script = ExtResource("2_qr6r1")

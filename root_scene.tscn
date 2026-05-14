@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://db10n8gyjvrsp"]
 
+[ext_resource type="Script" uid="uid://dq6ogpam0nleh" path="res://Scripts/game_manager.gd" id="1_c77vg"]
 [ext_resource type="PackedScene" uid="uid://c2gljkeejt128" path="res://screens/buy_sell_screen.tscn" id="1_itajj"]
 
-[node name="root_scene" type="Node2D" unique_id=217576608]
+[node name="root_scene" type="Node" unique_id=253209381]
+script = ExtResource("1_c77vg")
 
 [node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("1_itajj")]

@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bjxpxutmipf14" path="res://UI_Objects/buyable_or_sellable_button.tscn" id="1_ou6qf"]
 [ext_resource type="PackedScene" uid="uid://oker8qek142o" path="res://UI_Objects/buy_sell_column.tscn" id="2_8xrdf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmfqo"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xrdf"]
 bg_color = Color(1, 0.30197245, 0.50253135, 1)
 
@@ -23,18 +25,30 @@ offset_bottom = 648.0
 [node name="SellColumn" parent="HBoxContainer" unique_id=1624477306 instance=ExtResource("2_8xrdf")]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 4
+columns = 3
 
 [node name="buyable_sellable_button" parent="HBoxContainer/SellColumn" unique_id=700522243 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
+text = "Iron"
+resourceName = "iron"
 
 [node name="buyable_sellable_button2" parent="HBoxContainer/SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
+text = "Money"
 
 [node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=68767264 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
 
 [node name="buyable_sellable_button4" parent="HBoxContainer/SellColumn" unique_id=504236223 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="buyable_sellable_button5" parent="HBoxContainer/SellColumn" unique_id=291280417 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="buyable_sellable_button6" parent="HBoxContainer/SellColumn" unique_id=2029309643 instance=ExtResource("1_ou6qf")]
+layout_mode = 2
+
+[node name="buyable_sellable_button7" parent="HBoxContainer/SellColumn" unique_id=1862037955 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
 
 [node name="BuyColumn" parent="HBoxContainer" unique_id=1243617289 instance=ExtResource("2_8xrdf")]
@@ -62,8 +76,27 @@ uppercase = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
-text = "Sell"
+text = "Buy"
 uppercase = true
+
+[node name="MoneyPanel" type="Panel" parent="HBoxContainer2/BuyLabel" unique_id=847343848]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 5.0
+offset_right = 448.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmfqo")
+
+[node name="MoneyLabel" type="Label" parent="HBoxContainer2/BuyLabel/MoneyPanel" unique_id=1302516957]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 10.0
+offset_right = 79.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 40
+text = "$0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
 layout_mode = 2
