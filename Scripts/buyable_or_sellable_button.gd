@@ -1,5 +1,6 @@
 extends Panel
 
+@export_category("all must be filled!")
 @export var resourceName:String;
 @export var amountDisplay:Label;
 @export var priceDisplay:Label;
@@ -7,7 +8,6 @@ extends Panel
 
 func _ready() -> void:
 	amountDisplay.text = str(0);
-	print(GameManager.resourceDict[resourceName])
 	priceDisplay.text = "$"+str(GameManager.resourceDict[resourceName].value)
 	nameDisplay.text = resourceName.capitalize()
 

@@ -22,8 +22,9 @@ var money:int = 0;
 
 #returns the current value of the resource
 func incrementResource(resourceName:String) -> int:
+	#handle when the player can't pay
 	if(money < resourceDict[resourceName].value):
-		pass
+		return resourceDict[resourceName].amount
 	
 	money -= resourceDict[resourceName].value #maybe double this? would need associated UI
 	resourceDict[resourceName].amount += 1
@@ -31,6 +32,10 @@ func incrementResource(resourceName:String) -> int:
 
 #returns the current value of the resource
 func decrementResource(resourceName:String) -> int:
+	#don't let the resource go negative
+	if(resourceDict[resourceName].amount == 0):
+		return 0
+	
 	money += resourceDict[resourceName].value
 	resourceDict[resourceName].amount -= 1
 	return resourceDict[resourceName].amount
