@@ -35,7 +35,6 @@ resourceName = "iron"
 [node name="buyable_sellable_button2" parent="HBoxContainer/SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
 text = "Money"
-resourceName = "money"
 
 [node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=68767264 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
