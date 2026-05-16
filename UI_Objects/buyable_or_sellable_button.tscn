@@ -6,8 +6,8 @@
 bg_color = Color(0, 0.6981334, 0.5973108, 1)
 
 [node name="BuyableOrSellableArea" type="Panel" unique_id=283341847 node_paths=PackedStringArray("amountDisplay", "priceDisplay", "nameDisplay")]
-custom_minimum_size = Vector2(75, 175)
-offset_right = 75.0
+custom_minimum_size = Vector2(150, 175)
+offset_right = 150.0
 offset_bottom = 175.0
 script = ExtResource("2_qr6r1")
 amountDisplay = NodePath("Amount")
@@ -16,17 +16,19 @@ nameDisplay = NodePath("Name")
 
 [node name="Name" type="Label" parent="." unique_id=97948955]
 layout_mode = 0
-offset_top = 35.0
-offset_right = 75.0
-offset_bottom = 58.0
+offset_top = 29.0
+offset_right = 150.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
 text = "Name"
 horizontal_alignment = 1
 
 [node name="Amount" type="Label" parent="." unique_id=1792136222]
 layout_mode = 0
-offset_top = 70.0
-offset_right = 75.0
-offset_bottom = 93.0
+offset_top = 71.0
+offset_right = 150.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 
@@ -35,20 +37,20 @@ custom_minimum_size = Vector2(20, 30)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 115.0
-offset_right = 35.0
-offset_bottom = 151.0
-theme_override_font_sizes/font_size = 20
+offset_right = 66.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 30
 text = "-"
 expand_icon = true
 
 [node name="IncrementButton" type="Button" parent="." unique_id=700522243]
-custom_minimum_size = Vector2(20, 30)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = 41.0
+offset_left = 84.0
 offset_top = 115.0
-offset_right = 71.0
-offset_bottom = 151.0
-theme_override_font_sizes/font_size = 20
+offset_right = 144.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 30
 text = "+"
 expand_icon = true
 

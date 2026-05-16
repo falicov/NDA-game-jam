@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://oker8qek142o" path="res://UI_Objects/buy_sell_column.tscn" id="2_8xrdf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmfqo"]
+bg_color = Color(0.13979799, 0.6924765, 0.60332197, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xrdf"]
 bg_color = Color(1, 0.30197245, 0.50253135, 1)
@@ -33,21 +34,11 @@ resourceName = "coal"
 
 [node name="buyable_sellable_button2" parent="HBoxContainer/SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
+resourceName = "iron"
 
-[node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=68767264 instance=ExtResource("1_ou6qf")]
+[node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=283341847 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
-
-[node name="buyable_sellable_button4" parent="HBoxContainer/SellColumn" unique_id=504236223 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-
-[node name="buyable_sellable_button5" parent="HBoxContainer/SellColumn" unique_id=291280417 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-
-[node name="buyable_sellable_button6" parent="HBoxContainer/SellColumn" unique_id=2029309643 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-
-[node name="buyable_sellable_button7" parent="HBoxContainer/SellColumn" unique_id=1862037955 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
+resourceName = "silver"
 
 [node name="BuyColumn" parent="HBoxContainer" unique_id=1243617289 instance=ExtResource("2_8xrdf")]
 layout_mode = 2

@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dq6ogpam0nleh" path="res://Scripts/game_manager.gd" id="1_c77vg"]
 [ext_resource type="PackedScene" uid="uid://c2gljkeejt128" path="res://screens/buy_sell_screen.tscn" id="1_itajj"]
+[ext_resource type="PackedScene" uid="uid://m2e6g6wxaj50" path="res://screens/map_screen.tscn" id="3_iqet6"]
 
 [node name="root_scene" type="Node" unique_id=253209381]
 script = ExtResource("1_c77vg")
 
 [node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("1_itajj")]
+
+[node name="map_screen" parent="." unique_id=397192916 instance=ExtResource("3_iqet6")]
