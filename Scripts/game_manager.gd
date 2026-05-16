@@ -1,7 +1,7 @@
 extends Node
 
 #resources have a number of traits, I've made them an object to make things easier
-class gameResource:
+class _gameResource:
 	var resourceName:String;
 	var amount:int = 0;
 	var value:int;
@@ -12,10 +12,10 @@ class gameResource:
 		value = _value
 
 #allows for easy reference of objects
-var resourceDict:Dictionary[String, gameResource] = {
-	"coal":gameResource.new("coal", 1),
-	"iron":gameResource.new("iron", 5),
-	"silver":gameResource.new("silver", 10)
+var resourceDict:Dictionary[String, _gameResource] = {
+	"coal":_gameResource.new("coal", 1),
+	"iron":_gameResource.new("iron", 5),
+	"silver":_gameResource.new("silver", 10)
 	}
 
 var money:int = 0;
@@ -25,6 +25,12 @@ func incrementResource(resourceName:String) -> int:
 	if(money < resourceDict[resourceName].value):
 		pass
 	
-	money -= resourceDict[resourceName].value
+	money -= resourceDict[resourceName].value #maybe double this? would need associated UI
 	resourceDict[resourceName].amount += 1
+	return resourceDict[resourceName].amount
+
+#returns the current value of the resource
+func decrementResource(resourceName:String) -> int:
+	money += resourceDict[resourceName].value
+	resourceDict[resourceName].amount -= 1
 	return resourceDict[resourceName].amount

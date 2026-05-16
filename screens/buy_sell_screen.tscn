@@ -29,12 +29,10 @@ columns = 3
 
 [node name="buyable_sellable_button" parent="HBoxContainer/SellColumn" unique_id=700522243 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
-text = "Iron"
-resourceName = "iron"
+resourceName = "coal"
 
 [node name="buyable_sellable_button2" parent="HBoxContainer/SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
-text = "Money"
 
 [node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=68767264 instance=ExtResource("1_ou6qf")]
 layout_mode = 2
