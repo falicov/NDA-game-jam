@@ -18,7 +18,7 @@ var resourceDict:Dictionary[String, _gameResource] = {
 	"silver":_gameResource.new("silver", 10)
 	}
 
-var money:int = 0;
+var money:int = 20
 
 #returns the current value of the resource
 func incrementResource(resourceName:String) -> int:
