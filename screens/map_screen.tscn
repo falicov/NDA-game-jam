@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://m2e6g6wxaj50"]
+
+[node name="map_screen" type="Node2D" unique_id=397192916]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
+anchor_mode = 0
+
+[node name="Panel" type="Panel" parent="Camera2D" unique_id=1855178294]
+offset_right = 400.0
+offset_bottom = 1080.0
