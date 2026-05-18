@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bfs42o4ondvlt"]
+
+[ext_resource type="Script" path="res://screens/money_label.gd" id="1_oe7qm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o821c"]
+bg_color = Color(0.15260687, 0.69119686, 0.6071546, 1)
+
+[node name="MoneyLabel" type="PanelContainer" unique_id=1230214300]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_styles/panel = SubResource("StyleBoxFlat_o821c")
+
+[node name="Label" type="Label" parent="." unique_id=1536345206]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "$0"
+horizontal_alignment = 1
+script = ExtResource("1_oe7qm")
