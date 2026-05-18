@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcjq6sh4k70ps"]
+[gd_scene format=3 uid="uid://m2e6g6wxaj50"]
 
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="1_x0511"]
 
@@ -11,19 +11,19 @@ anchor_mode = 0
 offset_right = 1920.0
 offset_bottom = 180.0
 
-[node name="Panel" type="Panel" parent="Camera2D/HBoxContainer" unique_id=1199989190]
+[node name="InDayActions" type="Panel" parent="Camera2D/HBoxContainer" unique_id=1199989190]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="MoneyLabel" parent="Camera2D/HBoxContainer" unique_id=1230214300 instance=ExtResource("1_x0511")]
 layout_mode = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="Camera2D/HBoxContainer" unique_id=584485539]
+[node name="TimeInDay" type="PanelContainer" parent="Camera2D/HBoxContainer" unique_id=584485539]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Label" type="Label" parent="Camera2D/HBoxContainer/PanelContainer2" unique_id=1606449312]
+[node name="Label" type="Label" parent="Camera2D/HBoxContainer/TimeInDay" unique_id=1606449312]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "0.00s"

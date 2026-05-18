@@ -46,32 +46,37 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 60
+text = "VIEW MAP"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=43109664]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 180.0
 
-[node name="SellLabel" type="Label" parent="HBoxContainer2" unique_id=397946065]
+[node name="SellLabel" type="PanelContainer" parent="HBoxContainer2" unique_id=509860851]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 74
-text = "Sell"
+
+[node name="Label" type="Label" parent="HBoxContainer2/SellLabel" unique_id=724265190]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Resources"
 uppercase = true
 
-[node name="BuyLabel" type="Label" parent="HBoxContainer2" unique_id=1538776194]
+[node name="BuyLabel" type="PanelContainer" parent="HBoxContainer2" unique_id=2088448557]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 60
-text = "Buy"
+size_flags_stretch_ratio = 0.75
+
+[node name="Label" type="Label" parent="HBoxContainer2/BuyLabel" unique_id=2048134483]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Research"
 uppercase = true
 
-[node name="MoneyLabel" parent="HBoxContainer2/BuyLabel" unique_id=1230214300 instance=ExtResource("4_e8uf4")]
-layout_mode = 0
-offset_left = 552.0
-offset_top = -45.0
-offset_right = 769.0
-offset_bottom = 128.0
+[node name="MoneyLabel" parent="HBoxContainer2" unique_id=1230214300 instance=ExtResource("4_e8uf4")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
 layout_mode = 2
