@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://btg117njqy6w6"]
+
+[ext_resource type="Script" uid="uid://fpmppg6yjfds" path="res://Scripts/start.gd" id="2_ak2if"]
+[ext_resource type="Texture2D" uid="uid://dybjgxel8i6e0" path="res://assets/Title Screen.png" id="2_ig5kc"]
+
+[node name="title_screen" type="Control" unique_id=738304877]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1032975320]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ig5kc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=962501442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1872770755]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+text = "Digging the EnMINEroment"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=287753575]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "     Start     "
+script = ExtResource("2_ak2if")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]

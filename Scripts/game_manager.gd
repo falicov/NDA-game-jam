@@ -1,21 +1,41 @@
 extends Node
 
-var resourceDict = {
-	"money":0,
-	"coal":0,
-	"iron":0
+#resources have a number of traits, I've made them an object to make things easier
+class _gameResource:
+	var resourceName:String;
+	var amount:int = 0;
+	var value:int;
+	#TODO: add options here for prices in non-monetary resources
+	
+	func _init(_resourceName:String, _value:int):
+		resourceName = _resourceName
+		value = _value
+
+#allows for easy reference of objects
+var resourceDict:Dictionary[String, _gameResource] = {
+	"coal":_gameResource.new("coal", 1),
+	"iron":_gameResource.new("iron", 5),
+	"silver":_gameResource.new("silver", 10)
 	}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var money:int = 20
 
 #returns the current value of the resource
 func incrementResource(resourceName:String) -> int:
-	resourceDict[resourceName] += 1
-	return resourceDict[resourceName]
+	#handle when the player can't pay
+	if(money < resourceDict[resourceName].value):
+		return resourceDict[resourceName].amount
+	
+	money -= resourceDict[resourceName].value #maybe double this? would need associated UI
+	resourceDict[resourceName].amount += 1
+	return resourceDict[resourceName].amount
+
+#returns the current value of the resource
+func decrementResource(resourceName:String) -> int:
+	#don't let the resource go negative
+	if(resourceDict[resourceName].amount == 0):
+		return 0
+	
+	money += resourceDict[resourceName].value
+	resourceDict[resourceName].amount -= 1
+	return resourceDict[resourceName].amount

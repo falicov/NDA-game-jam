@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://db10n8gyjvrsp"]
+
+[ext_resource type="Script" uid="uid://dq6ogpam0nleh" path="res://Scripts/game_manager.gd" id="1_fk7yu"]
+[ext_resource type="PackedScene" uid="uid://c2gljkeejt128" path="res://screens/buy_sell_screen.tscn" id="2_2rhtk"]
+[ext_resource type="PackedScene" uid="uid://m2e6g6wxaj50" path="res://screens/map_screen.tscn" id="3_ygkj0"]
+[ext_resource type="PackedScene" uid="uid://btg117njqy6w6" path="res://screens/title_screen.tscn" id="4_mtem0"]
+
+[node name="root_scene" type="Node" unique_id=253209381]
+script = ExtResource("1_fk7yu")
+
+[node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("2_2rhtk")]
+
+[node name="map_screen" parent="." unique_id=397192916 instance=ExtResource("3_ygkj0")]
+
+[node name="title_screen" parent="." unique_id=738304877 instance=ExtResource("4_mtem0")]
