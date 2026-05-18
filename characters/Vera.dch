@@ -10,22 +10,22 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Narcisa",
+&"default_portrait": "Vera",
 &"description": "",
-&"display_name": "Narcisa",
+&"display_name": "Vera",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, -150),
+&"offset": Vector2(0, 0),
 &"portraits": {
-"Narcisa": {
+"Vera": {
 "export_overrides": {
-"image": "\"res://assets/Narcisa.png\""
+"image": "\"res://assets/Vera.png\""
 },
 "mirror": false,
-"offset": Vector2(0, -150),
-"scale": 1.5,
+"offset": Vector2(0, -200),
+"scale": 0.75,
 "scene": ""
 }
 },
-&"scale": 0.5
+&"scale": 1.0
 }
