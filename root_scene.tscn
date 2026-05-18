@@ -14,6 +14,7 @@ script = ExtResource("1_c77vg")
 [node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("1_itajj")]
 
 [node name="map_screen" parent="." unique_id=397192916 instance=ExtResource("3_iqet6")]
+visible = false
 
 [node name="MoneyPanel" type="Panel" parent="." unique_id=30084915]
 offset_left = 1308.0

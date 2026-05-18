@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="NDA Game Jam"
 run/main_scene="uid://btg117njqy6w6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -37,9 +37,14 @@ layout/style_list=["res://styles/VN Style.tres"]
 layout/default_style="res://styles/VN Style.tres"
 variables={}
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
