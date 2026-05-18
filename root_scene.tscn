@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dq6ogpam0nleh" path="res://Scripts/game_manager.gd" id="1_c77vg"]
 [ext_resource type="PackedScene" uid="uid://c2gljkeejt128" path="res://screens/buy_sell_screen.tscn" id="1_itajj"]
-[ext_resource type="PackedScene" uid="uid://m2e6g6wxaj50" path="res://screens/map_screen.tscn" id="3_iqet6"]
-[ext_resource type="Script" uid="uid://pvuty0m7y1u2" path="res://screens/money_label.gd" id="4_t2jh2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjqm"]
-bg_color = Color(0.13979799, 0.6924765, 0.60332197, 1)
+[ext_resource type="PackedScene" uid="uid://bcjq6sh4k70ps" path="res://screens/map_screen.tscn" id="3_iqet6"]
 
 [node name="root_scene" type="Node" unique_id=253209381]
 script = ExtResource("1_c77vg")
@@ -14,22 +10,3 @@ script = ExtResource("1_c77vg")
 [node name="buy_sell_screen" parent="." unique_id=1710120714 instance=ExtResource("1_itajj")]
 
 [node name="map_screen" parent="." unique_id=397192916 instance=ExtResource("3_iqet6")]
-
-[node name="MoneyPanel" type="Panel" parent="." unique_id=30084915]
-offset_left = 1308.0
-offset_top = 5.0
-offset_right = 1531.0
-offset_bottom = 181.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bbjqm")
-
-[node name="MoneyLabel" type="Label" parent="MoneyPanel" unique_id=866622289]
-layout_mode = 0
-offset_left = -5.0
-offset_top = 43.0
-offset_right = 234.0
-offset_bottom = 126.0
-theme_override_font_sizes/font_size = 60
-text = "$0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_t2jh2")

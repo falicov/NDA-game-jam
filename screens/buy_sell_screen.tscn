@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bjxpxutmipf14" path="res://UI_Objects/buyable_or_sellable_button.tscn" id="1_ou6qf"]
 [ext_resource type="PackedScene" uid="uid://oker8qek142o" path="res://UI_Objects/buy_sell_column.tscn" id="2_8xrdf"]
+[ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="4_e8uf4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xrdf"]
 bg_color = Color(1, 0.30197245, 0.50253135, 1)
@@ -64,6 +65,13 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "Buy"
 uppercase = true
+
+[node name="MoneyLabel" parent="HBoxContainer2/BuyLabel" unique_id=1230214300 instance=ExtResource("4_e8uf4")]
+layout_mode = 0
+offset_left = 552.0
+offset_top = -45.0
+offset_right = 769.0
+offset_bottom = 128.0
 
 [node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
 layout_mode = 2
