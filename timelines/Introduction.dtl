@@ -1,2 +1,89 @@
-join Narcisa center
-Narcisa: HELLO THIS IS A TEST
+[background arg="res://assets/pc_office.jpeg" fade="0.5" transition="Simple Fade"]
+*zzzzzhmP*\
+You wake up to someone tapping your shoulder.
+join unknown_man left
+unknown_man: "Hey, you ok? I think you fell asleep at your desk."
+Wow, I guess I really did not get much sleep last night. What... time is it?
+- Check your watch
+Your watch reads 12\:02pm. \
+Oh shoot, you're supposed to meet your new boss at 12!
+"Thanks!" you hurridly shout as you jump up and start to briskly walk towards her office.
+leave unknown_man
+You knock on her door, and hear a faint "Come in!"
+- Enter the room
+[background arg="res://assets/n_office.jpeg" fade="1.0"]
+join Narcisa left
+Narcisa: Ah hello there, my name is Narcisa. Yours?
+Your brain's still a bit jogged. Um.. what is my name again?
+[text_input text="My name is.." var="name"]
+"Nice to meet you Narcisa, my name is {name}."
+Narcisa: "The pleasure's all mine, {name}. I'm the Executive for this regional branch."
+You take a moment to study Narcisa's appearance. Behind her generic corporate mask you get the feeling she's hiding a smirk, eyeing you like new prey. There's a glint in her eyes, and from what you've heard around the workplace, she won't hesitate to toss you to the sharks if it means it'll benefit her.
+Narcisa: "Well, as you're aware, we've recently put through your promotion to Junior Operations Manager, congrats! I'm looking forward to seeing your contributions to the Company."
+Before you can respond, the door behind you slams open, and a red-haired girl rushes in.
+join Vera right
+Narcisa: "Sorry, so sorry, you need to see this immediately Narcisa! The air pollution levels after the most recent demolition-"
+Narcisa's tight smile immediately dropped.
+Narcisa: "Vera, how many times do I have to tell you to NOT enter without knocking! I'm in the middle of a conversation with the new Junior OM!"
+Vera looks like she just noticed you were also in the room.
+Vera: "Oh. Ok, um, I'll come back later then. Sorry."
+leave Vera
+Vera dashes out the door, most likely back to her lab. While I've never met our Environmental Scientist until today, I've heard stories about her protests over new developments and dig sites. Only hired to make the Company look better to the press, she's become a mainstay, and a thorn in the sides of most higher-ups here.
+Narcisa clears her throat, and her face returns to her normal PR-ready smile.
+Narcisa: "Sorry about her. Doesn't care for much outside her plants and science contraptions. You'll be talking with her a lot now, so make sure to get used to it."
+You can sense a bit of contempt behind Narcisa's words when she talks about Vera. This might be a good time to try and get on her good side.
+- "I'll be sure to steer clear when I can."
+	Narcisa's smile widens very slightly.
+	Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company. You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
+	She seems honest about her proposition.
+	set {visits} = 1.0
+	set {narcisa_s} += 5.0
+	set {vera_s} -= 5.0
+- "It's alright, I don't mind!"
+All of a sudden, she claps her hands together.
+Narcisa: "So! Let me give you a tour and walk you through your new responsibilities, as well as introduce you to some important faces."
+- Walk with Narcisa
+[background arg="res://assets/pc_office.jpeg" fade="1.0"]
+update Narcisa right
+As the two of you walk around the office, Narcisa brings you to a familiar face.
+join Rico left
+Narcisa: "Rico, there's someone I'd like you to meet. Rico, this is {name}, the new Junior Operations Manager. They'll be directly working with you regarding the new dig site. {name}, this is Rico, the Crew Lead. He manages and works with our miners, making sure there's no problems and things run smoothly.
+Rico has a soft smile, with a slightly anxious look on his face.
+Oh shoot, this is the guy who saw me sleeping at work! Not a great first impression... especially for someone who will be looking to me for guidance on decisions.
+- "Thanks for earlier."
+	Narcisa looks slightly confused, but brushes past it.
+- "Nice to meet you Rico!"
+Rico: "It's nice to officially meet you {name}. As Narcisa said, I'm in charge of and responsible for the miners of the Company; any changes to the operations or plans will probably be discussed with me."
+Narcisa: "We have a lot to do, so let's get moving. Keep up the good work Rico."
+Rico tenses for a second, then walks back to his desk.
+leave Rico
+- Walk with Narcisa
+[background arg="res://assets/lab.jpeg" fade="1.0"]
+join Vera left
+The two of you walk into the Environmental Sciences Lab, where Vera seems to be patiently waiting.
+Vera: "Hi, sorry about earlier! My name is Vera, and you must be {name}."
+Narcisa: "Yes, as you can see, our Environmental Scientist is always excited to meet people, one of the nice traits of hers."
+Vera frowned at this, but quickly moved on.
+Vera: "So, quick question- how aware are you of the history of Peruvian mining standards? Recently, we have tested 10 micrograms per deciliter of lead in the drinking water."
+- "That's not a lot, right?"
+	Vera scoffs.
+	set {vera_s} -= 5.0
+	Vera: "No, it's actually extremely dangerous, not just to the people but to the ecosystem! No one around here seems to understand this."
+- "Yikes, that much?"
+	Vera's eyes shine.
+	set {vera_s} += 5.0
+	Vera: "I know, right? I've been trying to bring up how important of an issue this is, not just to the people but to the ecosystem! It doesn't seem like many share the same opinion though..."
+Narcisa: "If I remember correctly, that study also did not have enough evidence to support a conclusion that it was due to our mining. Please keep these conspiracy theories inside your lab, it's {name}'s first day. Let's not bombard them.
+The last part seemed a bit like a threat, and Vera interpreted it as one, looking embarrased.
+- "Thank you Narcisa."
+	Narcisa: "Let's head  back to my office to finish up the tour, we can go over what you'll be doing tomorrow."
+	- Walk with Narcisa
+	leave Vera
+- "It's no problem, that sounds like something that should be looked into."
+[background arg="res://assets/n_office.jpeg" fade="1.0"]
+update Narcisa left
+if {visits} == 0.0:
+	Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company. You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
+	She seems honest about her proposition.
+set {visits} = 0.0
+Narcisa: "So, let's get to work."
