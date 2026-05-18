@@ -1,30 +1,53 @@
 [gd_scene format=3 uid="uid://m2e6g6wxaj50"]
 
+[ext_resource type="Script" uid="uid://dgep76d3eijbr" path="res://Scripts/map_screen.gd" id="1_8wms1"]
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="1_x0511"]
 
 [node name="map_screen" type="Node2D" unique_id=397192916]
+script = ExtResource("1_8wms1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
 anchor_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=518735253]
+[node name="in_game_GUI" type="HBoxContainer" parent="Camera2D" unique_id=518735253]
 offset_right = 1920.0
 offset_bottom = 180.0
 
-[node name="InDayActions" type="Panel" parent="Camera2D/HBoxContainer" unique_id=1199989190]
+[node name="InDayActions" type="Panel" parent="Camera2D/in_game_GUI" unique_id=1199989190]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MoneyLabel" parent="Camera2D/HBoxContainer" unique_id=1230214300 instance=ExtResource("1_x0511")]
+[node name="MoneyLabel" parent="Camera2D/in_game_GUI" unique_id=1230214300 instance=ExtResource("1_x0511")]
 layout_mode = 2
 
-[node name="TimeInDay" type="PanelContainer" parent="Camera2D/HBoxContainer" unique_id=584485539]
+[node name="TimeInDay" type="PanelContainer" parent="Camera2D/in_game_GUI" unique_id=584485539]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Label" type="Label" parent="Camera2D/HBoxContainer/TimeInDay" unique_id=1606449312]
+[node name="Label" type="Label" parent="Camera2D/in_game_GUI/TimeInDay" unique_id=1606449312]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "0.00s"
 horizontal_alignment = 1
+
+[node name="viewing_GUI" type="HBoxContainer" parent="Camera2D" unique_id=1342155749]
+visible = false
+offset_right = 1920.0
+offset_bottom = 180.0
+
+[node name="back_to_buy_sell" type="Button" parent="Camera2D/viewing_GUI" unique_id=146121952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[node name="start_mining" type="Button" parent="Camera2D/viewing_GUI" unique_id=1067770593]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+text = "Start Mining!"
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=942903922]
+collision_enabled = false
