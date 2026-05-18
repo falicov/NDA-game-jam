@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cabcalird2rbc"]
+
+[ext_resource type="PackedScene" path="res://UI_Objects/money_label.tscn" id="1_x0511"]
+
+[node name="map_screen" type="Node2D" unique_id=397192916]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
+anchor_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=518735253]
+offset_right = 1920.0
+offset_bottom = 180.0
+
+[node name="InDayActions" type="Panel" parent="Camera2D/HBoxContainer" unique_id=1199989190]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoneyLabel" parent="Camera2D/HBoxContainer" unique_id=1230214300 instance=ExtResource("1_x0511")]
+layout_mode = 2
+
+[node name="TimeInDay" type="PanelContainer" parent="Camera2D/HBoxContainer" unique_id=584485539]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" type="Label" parent="Camera2D/HBoxContainer/TimeInDay" unique_id=1606449312]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0.00s"
+horizontal_alignment = 1
