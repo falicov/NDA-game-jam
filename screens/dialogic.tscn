@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2f2vqdxubgmd"]
 
-[ext_resource type="Script" uid="uid://cs28tje8bijdt" path="res://dialogic.gd" id="1_jhpbv"]
+[ext_resource type="Script" uid="uid://cs28tje8bijdt" path="res://Scripts/dialogic.gd" id="1_jhpbv"]
 
 [node name="Dialogic" type="Node2D" unique_id=935226908]
 script = ExtResource("1_jhpbv")

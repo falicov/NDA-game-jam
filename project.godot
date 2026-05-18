@@ -10,6 +10,8 @@ config_version=5
 
 [application]
 
+config/name="Digging the EnMINEroment"
+run/main_scene="uid://btg117njqy6w6"
 config/name="New Game Project"
 run/main_scene="uid://db10n8gyjvrsp"
 config/features=PackedStringArray("4.6", "Forward Plus")
