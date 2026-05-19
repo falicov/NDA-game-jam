@@ -46,6 +46,7 @@ variables={
 "vera_s": 50,
 "visits": 0
 }
+
 [display]
 
 window/size/viewport_width=1920
