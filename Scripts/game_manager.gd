@@ -2,7 +2,7 @@ extends Node
 
 
 #resources have a number of traits, I've made them an object to make things easier
-class _gameResource:
+class game_resource:
 	var resourceName:String;
 	var amount:int = 0;
 	var value:int;
@@ -13,10 +13,10 @@ class _gameResource:
 		value = _value
 
 #allows for easy reference of objects
-var resourceDict:Dictionary[String, _gameResource] = {
-	"coal":_gameResource.new("coal", 1),
-	"iron":_gameResource.new("iron", 5),
-	"copper":_gameResource.new("c", 10)
+var resourceDict:Dictionary[String, game_resource] = {
+	"coal":game_resource.new("coal", 1),
+	"iron":game_resource.new("iron", 5),
+	"copper":game_resource.new("copper", 10)
 	}
 
 var money:int = 20

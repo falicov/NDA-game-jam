@@ -1,6 +1,6 @@
 extends Node2D
 
-var mapPlaying:bool
+var map_playing:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
