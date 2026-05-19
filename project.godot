@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Digging the EnMINEroment"
 run/main_scene="uid://db10n8gyjvrsp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -23,7 +23,10 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"Narcisa": "res://characters/Narcisa.dch"
+"Narcisa": "res://characters/Narcisa.dch",
+"Rico": "res://characters/Rico.dch",
+"Vera": "res://characters/Vera.dch",
+"unknown_man": "res://characters/unknown_man.dch"
 }
 directories/dtl_directory={
 "Introduction": "res://timelines/Introduction.dtl"
@@ -35,7 +38,14 @@ layout/style_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://styles/VN Style.tres"]
 layout/default_style="res://styles/VN Style.tres"
-variables={}
+variables={
+"name": "",
+"narcisa_s": 50,
+"randy_s": 50,
+"rico_s": 50,
+"vera_s": 50,
+"visits": 0
+}
 
 [display]
 

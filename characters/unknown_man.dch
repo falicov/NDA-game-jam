@@ -10,22 +10,23 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Narcisa",
+&"default_portrait": "Rico",
 &"description": "",
-&"display_name": "Narcisa",
+&"display_name": "???",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, -150),
+&"offset": Vector2(0, 0),
 &"portraits": {
-"Narcisa": {
+"Rico": {
 "export_overrides": {
-"image": "\"res://assets/Narcisa.png\""
+"image": "\"res://assets/Rico.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
-"offset": Vector2(0, -150),
-"scale": 1.5,
+"offset": Vector2(0, -300),
+"scale": 0.75,
 "scene": ""
 }
 },
-&"scale": 0.5
+&"scale": 1.0
 }
