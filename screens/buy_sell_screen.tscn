@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c2gljkeejt128"]
 
-[ext_resource type="PackedScene" uid="uid://bjxpxutmipf14" path="res://UI_Objects/buyable_or_sellable_button.tscn" id="1_ou6qf"]
 [ext_resource type="PackedScene" uid="uid://oker8qek142o" path="res://UI_Objects/buy_sell_column.tscn" id="2_8xrdf"]
+[ext_resource type="Script" uid="uid://xnnwj07wjk0h" path="res://Scripts/buy_column.gd" id="2_e8uf4"]
+[ext_resource type="Script" uid="uid://7f83r3dd1t2e" path="res://Scripts/go_to_map.gd" id="3_e8uf4"]
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="4_e8uf4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xrdf"]
@@ -25,29 +26,20 @@ offset_bottom = 1080.0
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
-
-[node name="buyable_sellable_button" parent="HBoxContainer/SellColumn" unique_id=700522243 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-resourceName = "coal"
-
-[node name="buyable_sellable_button2" parent="HBoxContainer/SellColumn" unique_id=660507612 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-resourceName = "iron"
-
-[node name="buyable_sellable_button3" parent="HBoxContainer/SellColumn" unique_id=283341847 instance=ExtResource("1_ou6qf")]
-layout_mode = 2
-resourceName = "silver"
+script = ExtResource("2_e8uf4")
 
 [node name="BuyColumn" parent="HBoxContainer" unique_id=1243617289 instance=ExtResource("2_8xrdf")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=1625025410]
+[node name="GoToMap" type="Button" parent="HBoxContainer" unique_id=1625025410 node_paths=PackedStringArray("buy_sell")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme_override_font_sizes/font_size = 60
 text = "VIEW MAP"
+script = ExtResource("3_e8uf4")
+buy_sell = NodePath("../..")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=43109664]
 layout_mode = 0
@@ -67,7 +59,6 @@ uppercase = true
 [node name="BuyLabel" type="PanelContainer" parent="HBoxContainer2" unique_id=2088448557]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.75
 
 [node name="Label" type="Label" parent="HBoxContainer2/BuyLabel" unique_id=2048134483]
 layout_mode = 2
@@ -77,8 +68,10 @@ uppercase = true
 
 [node name="MoneyLabel" parent="HBoxContainer2" unique_id=1230214300 instance=ExtResource("4_e8uf4")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.5
 
 [node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -86,3 +79,5 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_8xrdf")
 text = "Start Mining!"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="HBoxContainer/GoToMap" to="HBoxContainer/GoToMap" method="go_to_map"]
