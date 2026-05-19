@@ -1,15 +1,51 @@
-[gd_scene format=3 uid="uid://m2e6g6wxaj50"]
+[gd_scene format=4 uid="uid://m2e6g6wxaj50"]
 
-[ext_resource type="Script" uid="uid://dgep76d3eijbr" path="res://Scripts/map_screen.gd" id="1_8wms1"]
+[ext_resource type="Script" path="res://Scripts/map_screen.gd" id="1_8wms1"]
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="1_x0511"]
+[ext_resource type="Script" uid="uid://doxebmxdk3xwx" path="res://Scripts/map.gd" id="3_ssr5f"]
+[ext_resource type="Texture2D" uid="uid://bwsobv8r3svlm" path="res://assets/Tilemap_Take1.png" id="3_y881d"]
+[ext_resource type="Script" uid="uid://8udyif2w1ucp" path="res://Scripts/back_to_buy_sell.gd" id="5_vjsye"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssr5f"]
+texture = ExtResource("3_y881d")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vjsye"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_ssr5f")
 
 [node name="map_screen" type="Node2D" unique_id=397192916]
 script = ExtResource("1_8wms1")
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=942903922]
+position = Vector2(0, 55)
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAABAAMAAAAOAAcAAAACAAEAAAAOAAYAAAABAAMAAAAOAAUAAAAAAAAAAAANAAYAAAABAAMAAAAMAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAANAAQAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAUAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAABAAUAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vjsye")
+rendering_quadrant_size = 512
+physics_quadrant_size = 512
+script = ExtResource("3_ssr5f")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
 anchor_mode = 0
 
 [node name="in_game_GUI" type="HBoxContainer" parent="Camera2D" unique_id=518735253]
+visible = false
 offset_right = 1920.0
 offset_bottom = 180.0
 
@@ -32,22 +68,21 @@ text = "0.00s"
 horizontal_alignment = 1
 
 [node name="viewing_GUI" type="HBoxContainer" parent="Camera2D" unique_id=1342155749]
-visible = false
 offset_right = 1920.0
 offset_bottom = 180.0
 
-[node name="back_to_buy_sell" type="Button" parent="Camera2D/viewing_GUI" unique_id=146121952]
+[node name="back_to_buy_sell" type="Button" parent="Camera2D/viewing_GUI" unique_id=146121952 node_paths=PackedStringArray("map_screen")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 80
 text = "Back"
+script = ExtResource("5_vjsye")
+map_screen = NodePath("../../..")
 
 [node name="start_mining" type="Button" parent="Camera2D/viewing_GUI" unique_id=1067770593]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 80
 text = "Start Mining!"
-
-[node name="Map" type="TileMapLayer" parent="." unique_id=942903922]
-collision_enabled = false

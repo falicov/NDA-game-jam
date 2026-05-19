@@ -1,5 +1,6 @@
 extends Node
 
+
 #resources have a number of traits, I've made them an object to make things easier
 class _gameResource:
 	var resourceName:String;
@@ -15,7 +16,7 @@ class _gameResource:
 var resourceDict:Dictionary[String, _gameResource] = {
 	"coal":_gameResource.new("coal", 1),
 	"iron":_gameResource.new("iron", 5),
-	"silver":_gameResource.new("silver", 10)
+	"copper":_gameResource.new("c", 10)
 	}
 
 var money:int = 20

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://dq6ogpam0nleh"
 Dialogic="*uid://ds2q0uclmolvu"
+SceneManagement="*uid://432nln76e51j"
 
 [dialogic]
 
