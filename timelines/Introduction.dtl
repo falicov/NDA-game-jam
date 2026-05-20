@@ -19,8 +19,9 @@ Your brain's still a bit jogged. Um.. what is my name again?
 "Nice to meet you Narcisa, my name is {name}."
 Narcisa: "The pleasure's all mine, {name}. I'm the Executive for this regional branch."
 You take a moment to study Narcisa's appearance. Behind her generic corporate mask you get the feeling she's hiding a smirk, eyeing you like new prey.
- There's a glint in her eyes, and from what you've heard around the workplace, she won't hesitate to toss you to the sharks if it means it'll benefit her.
-Narcisa: "Well, as you're aware, we've recently sent through your promotion to Junior Operations Manager, congrats! I'm looking forward to seeing your contributions to the Company."
+There's a glint in her eyes, and from what you've heard around the workplace, she won't hesitate to toss you to the sharks if it means it'll benefit her.
+Narcisa: "Well, as you're aware, we've recently sent through your promotion to Junior Operations Manager, congrats!"
+"I'm looking forward to seeing your contributions to the Company."
 Before you can respond, the door behind you slams open, and a red-haired girl rushes in.
 join Vera right
 Narcisa: "Sorry, so sorry, you need to see this immediately Narcisa! The air pollution levels after the most recent demolition-"
@@ -29,19 +30,20 @@ Narcisa: "Vera, how many times do I have to tell you to NOT enter without knocki
 Vera looks like she just noticed you were also in the room.
 Vera: "Oh. Ok, um, I'll come back later then. Sorry."
 leave Vera
-Vera dashes out the door, most likely back to her lab. While I've never met our Environmental Scientist until today, I've heard stories about her protests over new developments and dig sites.
+Vera dashes out the door, most likely back to her lab.
+While I've never met our Environmental Scientist until today, I've heard stories about her protests over new developments and dig sites.
 Only hired to make the Company look better to the press, she's become a mainstay, and a thorn in the sides of most higher-ups here.
 Narcisa clears her throat, and her face returns to her normal PR-ready smile.
 Narcisa: "Sorry about her. Doesn't care for much outside her plants and science contraptions. You'll be talking with her a lot now, so make sure to get used to it."
 You can sense a bit of contempt behind Narcisa's words when she talks about Vera. This might be a good time to try and get on her good side.
 - "I'll be sure to steer clear when I can."
-	Narcisa's smile widens very slightly.
-	Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company."
-	Narcisa: "You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
-	She seems honest about her proposition.
-	set {visits} = 1.0
-	set {narcisa_s} += 5.0
-	set {vera_s} -= 5.0
+ Narcisa's smile widens very slightly.
+ Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company."
+ Narcisa: "You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
+ She seems honest about her proposition.
+ set {visits} = 1.0
+ set {narcisa_s} += 5.0
+ set {vera_s} -= 5.0
 - "It's alright, I don't mind!"
 All of a sudden, she claps her hands together.
 Narcisa: "So! Let me give you a tour and walk you through your new responsibilities, as well as introduce you to some important faces."
@@ -55,7 +57,7 @@ Narcisa: "{name}, this is Rico, the Crew Lead. He manages and works with our min
 Rico has a soft smile, with a slightly anxious look on his face.
 Oh shoot, this is the guy who saw me sleeping at work! Not a great first impression... especially for someone who will be looking to me for guidance on decisions.
 - "Thanks for earlier."
-	Narcisa looks slightly confused, but brushes past it.
+ Narcisa looks slightly confused, but brushes past it.
 - "Nice to meet you Rico!"
 Rico: "It's nice to officially meet you {name}. As Narcisa said, I'm in charge of and responsible for the miners of the Company; any changes to the operations or plans will probably be discussed with me."
 Narcisa: "We have a lot to do, so let's get moving. Keep up the good work Rico."
@@ -70,29 +72,62 @@ Narcisa: "Yes, as you can see, our Environmental Scientist is always excited to 
 Vera frowned at this, but quickly moved on.
 Vera: "So, quick question- how aware are you of the history of Peruvian mining standards? Recently, we have tested 10 micrograms per deciliter of lead in the drinking water."
 - "That's not a lot, right?"
-	Vera scoffs.
-	set {vera_s} -= 5.0
-	Vera: "No, it's actually extremely dangerous, not just to the people but to the ecosystem! No one around here seems to understand this."
+ Vera scoffs.
+ set {vera_s} -= 5.0
+ Vera: "No, it's actually extremely dangerous, not just to the people but to the ecosystem! No one around here seems to understand this."
 - "Yikes, that much?"
-	Vera's eyes shine.
-	set {vera_s} += 5.0
-	Vera: "I know, right? I've been trying to bring up how important of an issue this is, not just to the people but to the ecosystem! It doesn't seem like many share the same opinion though..."
+ Vera's eyes shine.
+ set {vera_s} += 5.0
+ Vera: "I know, right? I've been trying to bring up how important of an issue this is, not just to the people but to the ecosystem! It doesn't seem like many share the same opinion though..."
 Narcisa: "If I remember correctly, that study also did not have enough evidence to support a conclusion that it was due to our mining. Please keep these conspiracy theories inside your lab, it's {name}'s first day. Let's not bombard them.
 The last part seemed a bit like a threat, and Vera interpreted it as one, looking embarrassed.
 - "Thank you Narcisa."
-	Narcisa: "Let's head back to my office to finish up the tour, we can go over what you'll be doing tomorrow."
-	- Walk with Narcisa
-	leave Vera
+ Narcisa: "Let's head back to my office to finish up the tour, we can go over what you'll be doing tomorrow."
+ - Walk with Narcisa
+ leave Vera
 - "It's no problem, that sounds like something that should be looked into."
-	Narcisa: "Alright, maybe this is a good place to stop the tour then. I'll leave you two to discuss things and get acquainted- be sure to stop by my office before the end of the day so we can go over what you'll be doing tomorrow."
-	set {narcisa_s} -= 5.0
-	set {vera_s} -= 5.0
-	leave Narcisa
+ Narcisa: "Alright, maybe this is a good place to stop the tour then. I'll leave you two to discuss things and get acquainted- be sure to stop by my office before the end of the day so we can go over what you'll be doing tomorrow."
+ set {narcisa_s} -= 5.0
+ set {vera_s} -= 5.0
+ She seemed a bit annoyed by this. Was there really this much bad blood between the two?
+ leave Narcisa
+ Vera has a tired smile on her face. Now that you're face to face with her, you notice how fatigued she seems, probably from overworking.
+ Vera: "You picked a great week to start. The river's acidity jumped again overnight, and I'm stuck trying to figure out both why and how to prevent it."
+ Vera: "Nothing disasterous, but, you know, mildly alarming."
+ - "Only mildly?"
+ Vera: "Oh, don't worry, if it was worse I wouldn't have let Narcisa leave without pulling on her ear. The way that women works, she has no care for anything but profit!"
+ Vera: "None of the workers should be in danger, but I'm not sure if I can say the same of the fish... it's just one of those days where they think I'm crying wolf."
+ - "I'm sorry."
+ Vera's expression changes to one of sudden concern.
+ Vera: "Oh no don't be! You know, I'm just happy I can be making a difference here. With the way thinks are run it's a surprise I get any input."
+ - "So, what will you be needing of me?"
+ - "Is there anything I can do to help?"
+  set {vera_s} += 2.0
+ Vera: "Honestly, if you can commit to helping me, this could be a huge opportunity. Maybe.. just maybe.. you could convince Narcisa to ease up on output for a day or two, let things have a chance to breathe."
+ What does she expect me to do, barge in and say "Hey, can we not destroy the ecosystem today? Thanks!"
+ - "That'd be like handing in my resignation letter."
+ - "I'm sure that'll go over great."
+ Vera lets off a small laugh.
+ Vera: "Hey, you never know. She seems to like you, maybe you'll be in for a surprise."
+ Vera: "...Or maybe she'll pretend like she didn't hear you. That happens a lot around here."
+ Is this a path I want to take? Helping Vera out is risky, and might cost me my job.
+ if {visits} == 1.0:
+  Especially after that rundown with Narcisa.
+ - "Teamwork is the dreamwork, I think."
+  set {vera_s} += 5.0
+ - "No promises, but I'll consider it."
+ Vera: "Deal."
+ Vera: "But seriously, keep an eye on the runoff reports. This land remembers everything we do here."
+ Vera: "It was nice talking to you {name}. I'll be seeing you!"
+ leave Vera
+ Seems like that's my cue to leave. Vera's already buried herself back into work.
+ - Head back to Narcisa's Office
+ join Narcisa left
 [background arg="res://assets/n_office.jpeg" fade="1.0"]
 update Narcisa left
 if {visits} == 0.0:
-	Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company."
-	Narcisa: "You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
-	She seems honest about her proposition.
+ Narcisa: "So, let me give you a bit of a rundown. There's many ways you can approach this job. My suggestion? Stick with me, and I can guarantee you'll rise in the ranks here in the Company."
+ Narcisa: "You have potential, and I can help you, but only if you can help me in return. Does that make sense to you?"
+ She seems honest about her proposition.
 set {visits} = 0.0
 Narcisa: "So, let's get to work."
