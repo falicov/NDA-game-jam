@@ -20,7 +20,7 @@ var time_left:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#uncomment to test miners in scene! + other scene specific mechanics
-	start_playing()
+	#start_playing()
 	pass # Replace with function body.
 
 
@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 
 
 func start_playing() ->void:
+	print("day started!")
 	for miner in GameManager.miners:
 		map.add_child(miner)
 		miner.map = map

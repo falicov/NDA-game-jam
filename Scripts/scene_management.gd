@@ -2,7 +2,7 @@ extends Node
 
 #core gameplay screens. need a constant reference to both, even when not in scene tree
 var buy_sell
-var map_screen
+var map_screen:MapScreenManager
 
 #this must always be run before navigating to one of these scenes
 func setup_core_scenes() -> void:

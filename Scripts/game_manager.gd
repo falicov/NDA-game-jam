@@ -23,8 +23,9 @@ var resourceDict:Dictionary[String, game_resource] = {
 
 var money:int = 20
 
-var miners:Array = []
+var current_day:int = 1
 
+var miners:Array = []
 var miner_class = preload("res://miner.tscn")
 
 #returns the current value of the resource
@@ -47,7 +48,9 @@ func sellResource(resourceName:String) -> int:
 	resourceDict[resourceName].amount -= 1
 	return resourceDict[resourceName].amount
 
-
 func buyMiner() -> void:
 	var new_miner = miner_class.instantiate()
 	miners.append(new_miner)
+
+func getCurrentGoal() -> int:
+	return current_day * 5

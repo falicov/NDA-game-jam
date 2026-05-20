@@ -22,6 +22,7 @@ var anim_stage:int = 0
 
 func _ready() -> void:
 	GameManager.miners.append(self)
+	print("im in the game manager")
 	for r in GameManager.resourceDict:
 		_resource_dict.set(r, 0)
 
