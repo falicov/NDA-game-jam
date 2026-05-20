@@ -6,7 +6,9 @@ var map_playing:bool
 var miner = preload("res://miner.tscn")
 
 var start_time:float
-var time_in_day:float = 10000 #in milliseconds (subtract 3 0s to get sec)
+var time_in_day:float = 100000 #in milliseconds (subtract 3 0s to get sec)
+
+
 
 var time_left:
 	get: return time_in_day - (Time.get_ticks_msec() - start_time)
