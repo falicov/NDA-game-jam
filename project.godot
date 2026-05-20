@@ -29,7 +29,14 @@ directories/dch_directory={
 "unknown_man": "res://characters/unknown_man.dch"
 }
 directories/dtl_directory={
-"Introduction": "res://timelines/Introduction.dtl"
+"Day 1": "res://timelines/Day 1.dtl",
+"Day 2": "res://timelines/Day 2.dtl",
+"Day 3": "res://timelines/Day 3.dtl",
+"Day 4": "res://timelines/Day 4.dtl",
+"Day 5": "res://timelines/Day 5.dtl",
+"Endings": "res://timelines/Endings.dtl",
+"Introduction": "res://timelines/Introduction.dtl",
+"Tutorial": "res://timelines/Tutorial.dtl"
 }
 layout/style_directory={
 "": "res://styles/VN Style.tres",
