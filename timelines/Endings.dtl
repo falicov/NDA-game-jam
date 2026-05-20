@@ -1,1 +1,4 @@
-if {narcisa_s} >= {0.0}:
+if {ending} == 0.0:
+elif {ending} == 1.0:
+elif {ending} == 2.0:
+elif {ending} == 3.0:
