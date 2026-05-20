@@ -9,7 +9,7 @@ var start_time:float
 var time_in_day:float = 10000 #in milliseconds (subtract 3 0s to get sec)
 
 var time_left:
-	get: return Time.get_ticks_msec() - start_time
+	get: return time_in_day - (Time.get_ticks_msec() - start_time)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,9 +19,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	if(map_playing):
-		if(time_left >= time_in_day):
+		print(time_left)
+		if(time_left <= 0):
 			map_playing = false
 			#transition away from map here
 	
