@@ -96,6 +96,8 @@ func _process(delta: float) -> void:
 		if(_holding_resources):
 			for r in _resource_dict:
 				GameManager.resourceDict[r].amount += _resource_dict[r]
+				_resource_dict[r] = 0
+			_holding_resources = false
 		_current_tile = Vector2i(0,0)
 	else: #or move
 		var dist_to_tile = map.map_to_local(_current_tile) - position
