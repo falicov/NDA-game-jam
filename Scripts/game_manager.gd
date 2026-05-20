@@ -6,17 +6,19 @@ class game_resource:
 	var resourceName:String;
 	var amount:int = 0;
 	var value:int;
+	var sellable:bool
 	#TODO: add options here for prices in non-monetary resources
 	
-	func _init(_resourceName:String, _value:int):
+	func _init(_resourceName:String, _value:int, _sellable:bool):
 		resourceName = _resourceName
 		value = _value
+		sellable = _sellable
 
 #allows for easy reference of objects
 var resourceDict:Dictionary[String, game_resource] = {
-	"coal":game_resource.new("coal", 1),
-	"iron":game_resource.new("iron", 5),
-	"copper":game_resource.new("copper", 10)
+	"coal":game_resource.new("coal", 1, true),
+	"iron":game_resource.new("iron", 5, true),
+	"copper":game_resource.new("copper", 10, false)
 	}
 
 var money:int = 20

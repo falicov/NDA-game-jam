@@ -6,14 +6,19 @@ extends Panel
 @export var priceDisplay:Label;
 @export var nameDisplay:Label;
 var sellable:bool
+@export var sellButton:Button;
 
 #must be instantiated by its column!
 #if you try to make one of these by themself there will be a bug. see buy_column
 #or run setup() some other way
 func setup() -> void:
-	amountDisplay.text = str(0);
+	amountDisplay.text = str(GameManager.resourceDict[resourceName].amount);
 	priceDisplay.text = "$"+str(GameManager.resourceDict[resourceName].value)
 	nameDisplay.text = resourceName.capitalize()
+	
+	sellable = GameManager.resourceDict[resourceName].sellable
+	if(!sellable):
+		sellButton.free()
 
 func increment() -> void:
 	amountDisplay.text = str(GameManager.buyResource(resourceName))
