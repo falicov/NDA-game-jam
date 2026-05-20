@@ -1,4 +1,34 @@
+[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+When checking your email, you notice a message from Narcisa. Clicking on it opens the following\:
+Hello, I’d like to discuss your progress so far. Please stop by my office when you get the chance so we can talk.\
+ - Narcisa
+A bit ominous. You gulp, wondering what this meeting might entail. You’ve been doing a good job… right?
+A couple hours pass, and you knock on her door.
+Narcisa: "Come in!"
+join Narcisa left
+[background arg="res://assets/n_office.jpeg" fade="0.0"]
+Narcisa: "Hi {name}, it's nice to see you."
+- "You wanted to discuss things?"
+Narcisa: “Yes, yes, I like to do check-ins to see how things are going and if changes need to be made. For starters, let’s review some things.”
+- "Sounds good to me!"
+- "Understood."
 if {ending} == 0.0:
+	Narcisa: "Earlier today! I got word that you didn't meet the daily target threshold."
+	Narcisa: “So, you can see that clearly… things have not been working out. I had high hopes for you, but this early failure showed you had other interests besides what is best for the Company, and for your position here."
+	Narcisa: "I’m sorry to inform you that we have decided to demote you back to your previous position. This seems to be the best for you, and you can go back to the familiar environment you used to be in."
+	Narcisa: "Thank you for your effort!”
+	You stand there, a bit stunned.
+	Narcisa’s corporate smile drops.
+	Narcisa: “Listen, I warned you at the beginning – I can help you rise, or watch you fall. You ignored this and decided to do what you pleased instead."
+	Narcisa: "We exist to please the shareholders, not get worked up over the dumb environment or the workers; they can manage, like they always do."
+	Narcisa: "If you’re not useful, you’re useless, so I recommend you stay in your booth and do what you can do. Don’t expect a promotion anytime soon.”
+	Narcisa: I apologize if I put too high expectations on you. Not everyone is cut out for this, and clearly, that applies to you. You should just take this as a learning experience and with stride, ok?"
+	She motions towards the door. Silently, you leave her office and return to your desk.
+	leave Narcisa
+	[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+	Was this really the best you could do?
+	Ending 1\: “Causing Change is Challenging” complete
 elif {ending} == 1.0:
 elif {ending} == 2.0:
 elif {ending} == 3.0:
+else:
