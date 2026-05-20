@@ -25,7 +25,7 @@ func tile_is_mineable(coords:Vector2i) -> bool:
 	
 	var tile = get_cell_tile_data(coords)
 	for r in GameManager.resourceDict:
- 		if(tile.has_custom_data(r)):
+		if(tile.has_custom_data(r)):
 			if(tile.get_custom_data(r) !=0):
 				#check if someone else is already mining it
 				#2 miners should never mine the same tile
