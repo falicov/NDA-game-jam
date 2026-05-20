@@ -131,3 +131,4 @@ if {visits} == 0.0:
  She seems honest about her proposition.
 set {visits} = 0.0
 Narcisa: "So, let's get to work."
+[signal arg="Tutorial"]
