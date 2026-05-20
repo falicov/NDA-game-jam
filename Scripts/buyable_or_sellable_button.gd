@@ -5,6 +5,7 @@ extends Panel
 @export var amountDisplay:Label;
 @export var priceDisplay:Label;
 @export var nameDisplay:Label;
+var sellable:bool
 
 #must be instantiated by its column!
 #if you try to make one of these by themself there will be a bug. see buy_column
@@ -19,5 +20,5 @@ func increment() -> void:
 	pass
 
 func decrement() -> void:
-	amountDisplay.text = str(GameManager.buyResource(resourceName))
+	amountDisplay.text = str(GameManager.sellResource(resourceName))
 	pass

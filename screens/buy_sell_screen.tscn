@@ -63,7 +63,7 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="HBoxContainer2/BuyLabel" unique_id=2048134483]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
-text = "Research"
+text = "Hire"
 uppercase = true
 
 [node name="MoneyLabel" parent="HBoxContainer2" unique_id=1230214300 instance=ExtResource("4_e8uf4")]

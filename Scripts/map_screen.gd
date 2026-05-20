@@ -2,6 +2,10 @@ extends Node2D
 class_name MapScreenManager
 
 var map_playing:bool
+@export var time_left_text:Label
+@export var playing_gui:HBoxContainer
+@export var viewing_gui:HBoxContainer 
+
 @export var map:Map
 var miner = preload("res://miner.tscn")
 
@@ -16,16 +20,20 @@ var time_left:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#uncomment to test miners in scene! + other scene specific mechanics
-	#start_playing()
+	start_playing()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(map_playing):
-		print(time_left)
+		
+		time_left_text.text = str(snapped(time_left/1000, 0.01))
+		
 		if(time_left <= 0):
 			map_playing = false
+			viewing_gui.show()
+			playing_gui.hide()
 			#transition away from map here
 	
 
@@ -39,6 +47,9 @@ func start_playing() ->void:
 		miner.position = map.map_to_local(map.mine_base)
 	
 	start_time = Time.get_ticks_msec()
+	
+	playing_gui.show()
+	viewing_gui.hide()
 	
 	map_playing = true
 
