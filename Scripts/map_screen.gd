@@ -6,7 +6,7 @@ var map_playing:bool
 var miner = preload("res://miner.tscn")
 
 var start_time:float
-var time_in_day:float = 100000 #in milliseconds (subtract 3 0s to get sec)
+var time_in_day:float = 50000 #in milliseconds (subtract 3 0s to get sec)
 
 
 
@@ -15,7 +15,8 @@ var time_left:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_playing()
+	#uncomment to test miners in scene! + other scene specific mechanics
+	#start_playing()
 	pass # Replace with function body.
 
 

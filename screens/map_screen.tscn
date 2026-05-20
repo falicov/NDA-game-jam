@@ -94,6 +94,18 @@ sprite_frames = SubResource("SpriteFrames_vol1c")
 map = NodePath("..")
 map_screen_manager = NodePath("../..")
 
+[node name="Miner2" parent="Map" unique_id=2065256588 node_paths=PackedStringArray("map", "map_screen_manager") instance=ExtResource("4_08kek")]
+position = Vector2(3, 14)
+sprite_frames = SubResource("SpriteFrames_vol1c")
+map = NodePath("..")
+map_screen_manager = NodePath("../..")
+
+[node name="Miner3" parent="Map" unique_id=307184437 node_paths=PackedStringArray("map", "map_screen_manager") instance=ExtResource("4_08kek")]
+position = Vector2(3, 14)
+sprite_frames = SubResource("SpriteFrames_vol1c")
+map = NodePath("..")
+map_screen_manager = NodePath("../..")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
 anchor_mode = 0
 
