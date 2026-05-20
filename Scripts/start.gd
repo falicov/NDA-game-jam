@@ -16,11 +16,6 @@ func _on_pressed() -> void:
 
 func _on_signal(signal_passed_in) -> void:
 	match signal_passed_in:
-		"Tutorial":
-			root.add_child(SceneManagement.map_screen)
-			root.remove_child(SceneManagement.dialogic)
-			#get_tree().change_scene_to_file("res://screens/map_screen.tscn")
-			Dialogic.start("Tutorial")
 		"End":
 			root.add_child(SceneManagement.map_screen)
 			root.remove_child(SceneManagement.dialogic)

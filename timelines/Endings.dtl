@@ -1,7 +1,7 @@
 [background arg="res://assets/pc_office.jpeg" fade="0.0"]
 When checking your email, you notice a message from Narcisa. Clicking on it opens the following\:
 Hello, I’d like to discuss your progress so far. Please stop by my office when you get the chance so we can talk.\
- - Narcisa
+- Narcisa
 A bit ominous. You gulp, wondering what this meeting might entail. You’ve been doing a good job… right?
 A couple hours pass, and you knock on her door.
 Narcisa: "Come in!"
@@ -28,7 +28,17 @@ if {ending} == 0.0:
 	[background arg="res://assets/pc_office.jpeg" fade="0.0"]
 	Was this really the best you could do?
 	Ending 1\: “Causing Change is Challenging” complete
-elif {ending} == 1.0:
-elif {ending} == 2.0:
-elif {ending} == 3.0:
 else:
+	Narcisa: "You've met my expectations. Not many can hold that honor."
+	She walks around the desk, posture relaxed for the first time since you've met her.
+	Narcisa: "Most people crack under pressure."
+	Narcisa: "Most people hesitate."
+	Narcisa: "But you delivered."
+	Narcisa: "You’ve proven you’re someone I can rely on. Someone who understands what it takes to keep this place running."
+	Narcisa: "Keep this up, and there won’t be a door here you can’t open.
+Not for long."
+	She motions towards the door. Silently, you leave her office and return to your desk.
+	leave Narcisa
+	[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+	You feel a mix of happiness and guilt. Was this the right path to take?
+	Ending 2\: "Pride and its Price" complete

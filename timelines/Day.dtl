@@ -1,0 +1,16 @@
+The hums of machinery fade as you enter the office. With the sun slowly falling, you should check in on things with the others and see if anything is new.
+label Decisions
+- Go to Narcisa's Office
+	set {visits_n} += 1.0
+	if {visits_n} == 1.0:
+		jump Narcisa/Day 1
+	elif {visits_n} == 2.0:
+		jump Narcisa/Day 2
+	elif {visits_n} == 3.0:
+		jump Narcisa/Day 3
+	else:
+		jump Narcisa/Day Far
+- Go to Vera's Lab
+	This, and more, will be included in the next update!
+- Go to the Break Room
+	This, and more, will be included in the next update!
