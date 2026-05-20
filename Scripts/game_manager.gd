@@ -2,7 +2,7 @@ extends Node
 
 
 #resources have a number of traits, I've made them an object to make things easier
-class _gameResource:
+class game_resource:
 	var resourceName:String;
 	var amount:int = 0;
 	var value:int;
@@ -13,16 +13,20 @@ class _gameResource:
 		value = _value
 
 #allows for easy reference of objects
-var resourceDict:Dictionary[String, _gameResource] = {
-	"coal":_gameResource.new("coal", 1),
-	"iron":_gameResource.new("iron", 5),
-	"copper":_gameResource.new("c", 10)
+var resourceDict:Dictionary[String, game_resource] = {
+	"coal":game_resource.new("coal", 1),
+	"iron":game_resource.new("iron", 5),
+	"copper":game_resource.new("copper", 10)
 	}
 
 var money:int = 20
 
+var miners:Array = []
+
+var miner_class = preload("res://miner.tscn")
+
 #returns the current value of the resource
-func incrementResource(resourceName:String) -> int:
+func buyResource(resourceName:String) -> int:
 	#handle when the player can't pay
 	if(money < resourceDict[resourceName].value):
 		return resourceDict[resourceName].amount
@@ -32,7 +36,7 @@ func incrementResource(resourceName:String) -> int:
 	return resourceDict[resourceName].amount
 
 #returns the current value of the resource
-func decrementResource(resourceName:String) -> int:
+func sellResource(resourceName:String) -> int:
 	#don't let the resource go negative
 	if(resourceDict[resourceName].amount == 0):
 		return 0
@@ -40,3 +44,8 @@ func decrementResource(resourceName:String) -> int:
 	money += resourceDict[resourceName].value
 	resourceDict[resourceName].amount -= 1
 	return resourceDict[resourceName].amount
+
+
+func buyMiner() -> void:
+	var new_miner = miner_class.instantiate()
+	miners.append(new_miner)

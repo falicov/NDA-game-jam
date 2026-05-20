@@ -15,9 +15,9 @@ func setup() -> void:
 	nameDisplay.text = resourceName.capitalize()
 
 func increment() -> void:
-	amountDisplay.text = str(GameManager.incrementResource(resourceName))
+	amountDisplay.text = str(GameManager.buyResource(resourceName))
 	pass
 
 func decrement() -> void:
-	amountDisplay.text = str(GameManager.decrementResource(resourceName))
+	amountDisplay.text = str(GameManager.buyResource(resourceName))
 	pass
