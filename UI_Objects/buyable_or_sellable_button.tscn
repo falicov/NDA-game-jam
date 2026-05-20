@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiids"]
 bg_color = Color(0, 0.6981334, 0.5973108, 1)
 
-[node name="BuyableOrSellableArea" type="Panel" unique_id=283341847 node_paths=PackedStringArray("amountDisplay", "priceDisplay", "nameDisplay")]
+[node name="BuyableOrSellableArea" type="Panel" unique_id=283341847 node_paths=PackedStringArray("amountDisplay", "priceDisplay", "nameDisplay", "sellButton")]
 custom_minimum_size = Vector2(250, 300)
 offset_right = 150.0
 offset_bottom = 175.0
@@ -13,6 +13,7 @@ script = ExtResource("2_qr6r1")
 amountDisplay = NodePath("Amount")
 priceDisplay = NodePath("PricePanel/PriceValue")
 nameDisplay = NodePath("Name")
+sellButton = NodePath("HBoxContainer/DecrementButton")
 
 [node name="Name" type="Label" parent="." unique_id=97948955]
 layout_mode = 0
@@ -67,5 +68,6 @@ offset_bottom = 23.0
 text = "$X"
 horizontal_alignment = 1
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="HBoxContainer/DecrementButton" to="." method="decrement"]
 [connection signal="pressed" from="HBoxContainer/IncrementButton" to="." method="increment"]

@@ -20,7 +20,9 @@ func _process(delta: float) -> void:
 
 func tile_is_mineable(coords:Vector2i) -> bool:
 	print("checking if I can mine at " + str(coords))
-	if(coords.x > mine_base.x || coords.y > mine_base.y):
+	#note that the last param must be changed if the camera can move
+	if(coords.x > mine_base.x || coords.y > mine_base.y 
+	|| coords.y < 1):
 		return false
 	
 	var tile = get_cell_tile_data(coords)

@@ -4,9 +4,20 @@
 [ext_resource type="Script" uid="uid://xnnwj07wjk0h" path="res://Scripts/buy_column.gd" id="2_e8uf4"]
 [ext_resource type="Script" uid="uid://7f83r3dd1t2e" path="res://Scripts/go_to_map.gd" id="3_e8uf4"]
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="4_e8uf4"]
+[ext_resource type="Script" uid="uid://d02o1cs1m8335" path="res://Scripts/end_day.gd" id="4_n8pqw"]
+[ext_resource type="Script" uid="uid://dg83uumigogom" path="res://Scripts/goal_label.gd" id="5_vf0d0"]
+[ext_resource type="Script" uid="uid://dpsf0oltnexv0" path="res://screens/next_day.gd" id="7_jy8xd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf0d0"]
+bg_color = Color(0.9607843, 0, 0.35686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8uf4"]
+bg_color = Color(0.9594701, 0, 0.3576793, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xrdf"]
 bg_color = Color(1, 0.30197245, 0.50253135, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8pqw"]
 
 [node name="BuySellScreen" type="Control" unique_id=893495234]
 layout_mode = 3
@@ -32,14 +43,30 @@ script = ExtResource("2_e8uf4")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GoToMap" type="Button" parent="HBoxContainer" unique_id=1625025410 node_paths=PackedStringArray("buy_sell")]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1783199854]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="GoToMap" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1625025410 node_paths=PackedStringArray("buy_sell")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 theme_override_font_sizes/font_size = 60
 text = "VIEW MAP"
 script = ExtResource("3_e8uf4")
-buy_sell = NodePath("../..")
+buy_sell = NodePath("../../..")
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=35193835 node_paths=PackedStringArray("endDayStuff", "endDayText")]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_vf0d0")
+text = "End Day"
+script = ExtResource("4_n8pqw")
+endDayStuff = NodePath("../../../EndDayInfo")
+endDayText = NodePath("../../../EndDayInfo/Label")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=43109664]
 layout_mode = 0
@@ -59,16 +86,30 @@ uppercase = true
 [node name="BuyLabel" type="PanelContainer" parent="HBoxContainer2" unique_id=2088448557]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 
 [node name="Label" type="Label" parent="HBoxContainer2/BuyLabel" unique_id=2048134483]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
-text = "Research"
+text = "Hire"
 uppercase = true
 
 [node name="MoneyLabel" parent="HBoxContainer2" unique_id=1230214300 instance=ExtResource("4_e8uf4")]
 layout_mode = 2
+
+[node name="GoalContainer" type="PanelContainer" parent="HBoxContainer2" unique_id=1468435439]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_e8uf4")
+
+[node name="Label" type="Label" parent="HBoxContainer2/GoalContainer" unique_id=1619509473]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Goal: $000"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_vf0d0")
 
 [node name="Button" type="Button" parent="HBoxContainer2" unique_id=1054609012]
 visible = false
@@ -80,4 +121,34 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8xrdf")
 text = "Start Mining!"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="HBoxContainer/GoToMap" to="HBoxContainer/GoToMap" method="go_to_map"]
+[node name="EndDayInfo" type="Panel" parent="." unique_id=443283121]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1089.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8pqw")
+
+[node name="Label" type="Label" parent="EndDayInfo" unique_id=282034689]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 256.0
+offset_right = 1916.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 80
+text = "You made $X which meets the goal "
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="EndDayInfo" unique_id=1072339849 node_paths=PackedStringArray("buy_sell")]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 701.0
+offset_right = 1241.0
+offset_bottom = 792.0
+theme_override_font_sizes/font_size = 60
+text = "Proceed to next day"
+script = ExtResource("7_jy8xd")
+buy_sell = NodePath("../..")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GoToMap" to="HBoxContainer/VBoxContainer/GoToMap" method="go_to_map"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/Button" method="pressed"]
+[connection signal="tree_entered" from="HBoxContainer2/GoalContainer/Label" to="HBoxContainer2/GoalContainer/Label" method="_on_tree_entered"]

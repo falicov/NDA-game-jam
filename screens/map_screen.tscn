@@ -74,8 +74,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="map_screen" type="Node2D" unique_id=397192916 node_paths=PackedStringArray("map")]
+[node name="map_screen" type="Node2D" unique_id=397192916 node_paths=PackedStringArray("time_left_text", "playing_gui", "viewing_gui", "map")]
 script = ExtResource("1_8wms1")
+time_left_text = NodePath("Camera2D/in_game_GUI/TimeInDay/TimeLeftText")
+playing_gui = NodePath("Camera2D/in_game_GUI")
+viewing_gui = NodePath("Camera2D/viewing_GUI")
 map = NodePath("Map")
 metadata/_edit_horizontal_guides_ = [261.0]
 
@@ -126,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Label" type="Label" parent="Camera2D/in_game_GUI/TimeInDay" unique_id=1606449312]
+[node name="TimeLeftText" type="Label" parent="Camera2D/in_game_GUI/TimeInDay" unique_id=1606449312]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "0.00s"

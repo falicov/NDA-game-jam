@@ -2,11 +2,15 @@ extends Node2D
 class_name MapScreenManager
 
 var map_playing:bool
+@export var time_left_text:Label
+@export var playing_gui:HBoxContainer
+@export var viewing_gui:HBoxContainer 
+
 @export var map:Map
 var miner = preload("res://miner.tscn")
 
 var start_time:float
-var time_in_day:float = 50000 #in milliseconds (subtract 3 0s to get sec)
+var time_in_day:float = 10000 #in milliseconds (subtract 3 0s to get sec)
 
 
 
@@ -23,15 +27,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(map_playing):
-		print(time_left)
+		
+		time_left_text.text = str(snapped(time_left/1000, 0.01))
+		
 		if(time_left <= 0):
 			map_playing = false
+			viewing_gui.show()
+			playing_gui.hide()
+			print(GameManager.resourceDict["coal"].amount)
 			#transition away from map here
 	
 
 
 
 func start_playing() ->void:
+	print("day started!")
 	for miner in GameManager.miners:
 		map.add_child(miner)
 		miner.map = map
@@ -39,6 +49,9 @@ func start_playing() ->void:
 		miner.position = map.map_to_local(map.mine_base)
 	
 	start_time = Time.get_ticks_msec()
+	
+	playing_gui.show()
+	viewing_gui.hide()
 	
 	map_playing = true
 

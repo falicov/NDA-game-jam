@@ -5,4 +5,3 @@
 [node name="root_scene" type="Node" unique_id=253209381]
 
 [node name="title_screen" parent="." unique_id=738304877 instance=ExtResource("4_mtem0")]
-visible = false

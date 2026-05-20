@@ -2,7 +2,6 @@ extends GridContainer
 
 var buyable_sellable_obj = preload("res://UI_Objects/buyable_or_sellable_button.tscn")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for _resourceName in GameManager.resourceDict:
