@@ -35,8 +35,7 @@ else:
 	Narcisa: "Most people hesitate."
 	Narcisa: "But you delivered."
 	Narcisa: "You’ve proven you’re someone I can rely on. Someone who understands what it takes to keep this place running."
-	Narcisa: "Keep this up, and there won’t be a door here you can’t open.
-Not for long."
+	Narcisa: "Keep this up, and there won’t be a door here you can’t open. Not for long."
 	She motions towards the door. Silently, you leave her office and return to your desk.
 	leave Narcisa
 	[background arg="res://assets/pc_office.jpeg" fade="0.0"]
