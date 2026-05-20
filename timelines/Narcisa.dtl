@@ -1,0 +1,169 @@
+label Day 1
+set {narcisa_s} += 5.0
+You knock on Narcisa's door.
+Narcisa: "Come in!"
+[background arg="res://assets/n_office.jpeg" fade="0.0"]
+join Narcisa left
+Narcisa is at her desk, reviewing over some spreadsheets you don't recognize.
+She smiles warmly
+Narcisa: "So, how was your day? Not too bad I hope?"
+- "It could've been better"
+	set {narcisa_s} -= 2.0
+	Narcisa: "Ah, well, you're still learning. It's expected to be a bit rough. You got the job done though!"
+	Her reassurance is nice, but it feels like it's masking some disappointment.
+- "Things went great!"
+	set {narcisa_s} += 2.0
+	She beamed at me, giving off the full corporate smile.
+	Narcisa: "I'm so glad to hear it! I knew you were the perfect person for the job."
+She smile drops a bit, her face becoming more serious.
+Narcisa: "Listen, I'll be direct with you."
+Narcisa: "We're behind a bit on quarterly targets. Not a big deal, but just noteworthy. A little push tomorrow would make all the difference."
+She leans back, relaxing as if she wasn't dropping extra work onto you.
+Narcisa: "If you could bump output by even a few percent, it'll look very good for you."
+Narcisa: "The board notices initiative. And I notice people who help me keep this dump running."
+- "I can increase output tomorrow."
+	set {output_increase} += 0.25
+	set {narcisa_s} += 5.0
+	Narcisa's shining smile returned.
+	Narcisa: "Ambition is a good look on you."
+- "I think I need some more time to adjust."
+	set {narcisa_s} -= 2.0
+	Narcisa's face tightens.
+	Narcisa: "Just something to think about. Best of luck for tomorrow."
+- "Won't the miners be upset?"
+	set {narcisa_s} -= 5.0
+	set {rico_s} += 2.0
+	She frowns.
+	Narcisa: "I don't see any reason for them to! They're on the clock anyways, might as well be working as hard as they can."
+	Narcisa: "It's nothing you should concern yourself with anyways. Focus on the end goals here.
+[signal arg="End"]
+label Day 2
+set {narcisa_s} += 5.0
+You knock on Narcisa's door.
+Narcisa: "Come in!"
+[background arg="res://assets/n_office.jpeg" fade="0.0"]
+join Narcisa left
+Narcisa has some charts on her computer, and a large mug of steaming coffee next to it.
+Narcisa: "You handled yourself well today. I notice things like that."
+Praise? That's good to hear.
+She taps the computer screen, pointing at one of the charts.
+Narcisa: "In the short time you've been here, projected profits have already increased. You have eyes on you, and this is a good thing, for both of us."
+Her gaze softens slightly.
+Narcisa: "How's the work been so far? Can you keep this level of effort, go higher, etc.?"
+- "We need to slow down, not speed up."
+	set {narcisa_s} -= 2.0
+	set {output_increase} -= 0.25
+	set {vera_s} += 2.0
+	Narcisa didn't bother to hide her distain for your statement.
+	Narcisa: "Oh, is that so? A quick reminder that I am your boss currently, not the other way around. I hope you remember our conversation, and keep it in mind."
+	She lets off a small shrug.
+	Narcisa: "Well, this is your court here. Do what you think is best. Just make sure to hit your thresholds if you want to see yourself here in the future."
+- "Let's hit these goals out of the park!"
+	set {narcisa_s} += 5.0
+	set {output_increase} += 0.25
+	Narcisa: "That's what I like to hear! I knew I didn't make any mistake giving you this position. We make a good team, and will continue to push this crappy site to never-before seen value."
+- "It's a bit tough, but I'm managing."
+	Narcisa: "Alright, keep at it then. Don't let me down."
+[signal arg="End"]
+label Day 3
+set {narcisa_s} += 5.0
+You knock on Narcisa's door.
+Narcisa: "Hey {name}, come in!"
+[background arg="res://assets/n_office.jpeg" fade="0.0"]
+join Narcisa left
+Narcisa's sitting at her desk, seemingly waiting for you.
+Narcisa: "Please, have a seat. I'm glad you stopped by, I was going to come looking for you. We need to discuss something serious."
+She tapped her pen on the table.
+Narcisa: "There's currently a large-scale protest going on by the miners, led by someone who's been working here for decades, Randy. Everyone knows him, and trusts him, so if he's happy, they'll settle down."
+Narcisa: "We need to figure out how to address this and quell the crowd so they go back to work and we don't fall behind on our goals."
+She leans forward slightly.
+Narcisa: "Any suggestions?"
+- "We should go talk to Rico."
+	Narcisa: "Hmm, good idea. If anyone knows the best way to deal with them it'd be him. Let's go see if he's in the break room."
+	[background arg="res://assets/breakroom.jpg" fade="0.0"]
+	join Rico right
+	Rico: "Hey guys, what's up?"
+	He seems a bit nervous. I wonder if he thinks Narcisa is here to scold him, with the protest and whatnot.
+	Narcisa: "{name} and I, as you know, are currently dealing with the miners' protesting. As the Crew Lead, we were wondering if you had any ideas on how to solve this issue.
+	Rico: "Hmm, I think you would need to talk to Randy to find out what they want. They haven't made any official statements yet, but he's a good friend of mine, so I can try and introduce you."
+	Narcisa: "That could work. {name}, I'll be leaving this to your discretion. Show me you deserve this position."
+	leave Narcisa
+	Before you can say anything, Narcisa leaves the room.
+	Rico: "Alright, let me bring you to Randy so you two can talk things through. He should be around here somewhere."
+	join Randy left
+	Randy: "Hey. What's up Rico?"
+	Rico: "Randy, this is {name}, {name}, this is Randy. They wanted to speak with you regarding the protest."
+	Randy: "Ah, so this is the person in charge? Let's get one thing straight, these conditions you have us working are not livable. My friend broke his leg yesterday, and a supervisor told him to "walk it off?" are you kidding?"
+	Randy: "I've been here for over 20 years now, and each day this place gets worse and worse. You are all just powerhungry, grasping at every dollar you can make, it's sickening."
+	- "I'm not like that."
+		He laughs.
+		Randy: "Hah, like that's true. Everyone here is in the same, working as a minion of that devil Narcisa. If I could give her a piece of my mind, I would."
+	- "It's true."
+		set {rico_s} += 2.0
+		set {narcisa_s} -= 2.0
+		He stops, seeming a bit surprised.
+	Rico: "Randy, {name} is here to listen to you. We want to help, and get things moving again."
+	Randy: "My demands? Half the workday and double the pay. Until then, we will continue to protest."
+	HALF the time and DOUBLE the pay? Narcisa would blow a fuse if she were here. How can I negotiate this?
+	- "Deal."
+		set {narcisa_s} -= 10.0
+		He seems shocked.
+		Randy: "Really?"
+		Rico: "Really?"
+		Your stomach sinks. Uh oh.
+		Randy: "Alright, I'll go inform the rest of the miners then. Thank you for being reasonable here."
+		leave Randy
+		Rico: "You sure about this? Narcisa's not going to be happy."
+		I'm sure things will be fine.. hopefully.
+		leave Rico
+		[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+	- "We can talk about a pay increase."
+		set {narcisa_s} -= 5.0
+		He seems shocked.
+		Randy: "Really?"
+		Rico: "Really?"
+		Your stomach sinks. Uh oh.
+		Randy: "Alright, I'll go inform the rest of the miners then. Thank you for being reasonable here."
+		leave Randy
+		Rico: "You sure about this? Narcisa's not going to be happy."
+		I'm sure things will be fine.. hopefully.
+		leave Rico
+		[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+	- "We can discuss better hours."
+		set {narcisa_s} -= 5.0
+		He seems shocked.
+		Randy: "Really?"
+		Rico: "Really?"
+		Your stomach sinks. Uh oh.
+		Randy: "Alright, I'll go inform the rest of the miners then. Thank you for being reasonable here."
+		leave Randy
+		Rico: "You sure about this? Narcisa's not going to be happy."
+		I'm sure things will be fine.. hopefully.
+		leave Rico
+		[background arg="res://assets/pc_office.jpeg" fade="0.0"]
+
+- "They have contracts they have to uphold."
+	set {narcisa_s} -= 10.0
+	Narcisa smiled approvingly.
+	Narcisa: "I'll draft the notice."
+	Narcisa busies herself with paperwork, motioning that you can leave.
+	leave Narcisa
+
+- "Maybe we should address the underlying issues"
+	set {narcisa_s} -= 5.0
+	set {rico_s} += 2.0
+	set {vera_s} += 2.0
+	Her eyes narrow slightly.
+	Narcisa: "That sounds... idealistic."
+	Narcisa: "If you insist, though, I'll authorize a brief assessment."
+	Narcisa: "I hope you understand the risk you're taking with this. Compassion can be admirable, but it can also be costly."
+	Narcisa busies herself with paperwork, motioning that you can leave.
+	leave Narcisa
+You walk back to your desk with the weight of your decision settling in.
+[signal arg="End"]
+label Day Far
+You knock on Narcisa's door.
+Narcisa: "Sorry, I'm busy at the moment- I'll speak with you later."
+This, and more, will be included in the next update!
+jump Day/Decisions
+[signal arg="End"]

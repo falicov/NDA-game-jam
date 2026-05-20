@@ -25,6 +25,8 @@ SceneManagement="*uid://432nln76e51j"
 
 directories/dch_directory={
 "Narcisa": "res://characters/Narcisa.dch",
+"Randy": "res://characters/Randy.dch",
+"Randy_Crowd": "res://characters/Randy_Crowd.dch",
 "Rico": "res://characters/Rico.dch",
 "Vera": "res://characters/Vera.dch",
 "unknown_man": "res://characters/unknown_man.dch"
@@ -33,7 +35,10 @@ directories/dtl_directory={
 "Day": "res://timelines/Day.dtl",
 "Endings": "res://timelines/Endings.dtl",
 "Introduction": "res://timelines/Introduction.dtl",
-"Tutorial": "res://timelines/Tutorial.dtl"
+"Narcisa": "res://timelines/Narcisa.dtl",
+"Rico": "res://timelines/Rico.dtl",
+"Tutorial": "res://timelines/Tutorial.dtl",
+"Vera": "res://timelines/Vera.dtl"
 }
 layout/style_directory={
 "": "res://styles/VN Style.tres",
@@ -46,10 +51,14 @@ variables={
 "ending": 0,
 "name": "",
 "narcisa_s": 50,
+"output_increase": 1.0,
 "randy_s": 50,
 "rico_s": 50,
 "vera_s": 50,
-"visits": 0
+"visits": 0,
+"visits_n": 0,
+"visits_r": 0,
+"visits_v": 0
 }
 
 [display]
