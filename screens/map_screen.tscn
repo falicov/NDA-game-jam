@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="1_x0511"]
 [ext_resource type="Script" uid="uid://doxebmxdk3xwx" path="res://Scripts/map.gd" id="3_ssr5f"]
 [ext_resource type="Texture2D" uid="uid://bwsobv8r3svlm" path="res://assets/Tilemap_Take1.png" id="3_y881d"]
-[ext_resource type="Script" uid="uid://b7t3fajq5njfu" path="res://screens/miner.gd" id="4_08kek"]
+[ext_resource type="PackedScene" uid="uid://ddkayrr7qqfjq" path="res://miner.tscn" id="4_08kek"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_icokh"]
 [ext_resource type="Script" uid="uid://8udyif2w1ucp" path="res://Scripts/back_to_buy_sell.gd" id="5_vjsye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssr5f"]
@@ -52,8 +53,20 @@ custom_data_layer_2/name = "copper"
 custom_data_layer_2/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ssr5f")
 
-[node name="map_screen" type="Node2D" unique_id=397192916]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vol1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_icokh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="map_screen" type="Node2D" unique_id=397192916 node_paths=PackedStringArray("map")]
 script = ExtResource("1_8wms1")
+map = NodePath("Map")
 metadata/_edit_horizontal_guides_ = [261.0]
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=942903922]
@@ -63,9 +76,13 @@ tile_set = SubResource("TileSet_vjsye")
 rendering_quadrant_size = 512
 physics_quadrant_size = 512
 script = ExtResource("3_ssr5f")
+mine_base = Vector2i(14, 7)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map" unique_id=796957254]
-script = ExtResource("4_08kek")
+[node name="Miner" parent="Map" unique_id=709305928 node_paths=PackedStringArray("map", "map_screen_manager") instance=ExtResource("4_08kek")]
+position = Vector2(3, 14)
+sprite_frames = SubResource("SpriteFrames_vol1c")
+map = NodePath("..")
+map_screen_manager = NodePath("../..")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1173703085]
 anchor_mode = 0

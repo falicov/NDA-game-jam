@@ -21,8 +21,12 @@ var resourceDict:Dictionary[String, game_resource] = {
 
 var money:int = 20
 
+var miners:Array = []
+
+var miner_class = preload("res://miner.tscn")
+
 #returns the current value of the resource
-func incrementResource(resourceName:String) -> int:
+func buyResource(resourceName:String) -> int:
 	#handle when the player can't pay
 	if(money < resourceDict[resourceName].value):
 		return resourceDict[resourceName].amount
@@ -32,7 +36,7 @@ func incrementResource(resourceName:String) -> int:
 	return resourceDict[resourceName].amount
 
 #returns the current value of the resource
-func decrementResource(resourceName:String) -> int:
+func sellResource(resourceName:String) -> int:
 	#don't let the resource go negative
 	if(resourceDict[resourceName].amount == 0):
 		return 0
@@ -40,3 +44,8 @@ func decrementResource(resourceName:String) -> int:
 	money += resourceDict[resourceName].value
 	resourceDict[resourceName].amount -= 1
 	return resourceDict[resourceName].amount
+
+
+func buyMiner() -> void:
+	var new_miner = miner_class.instantiate()
+	miners.append(new_miner)
