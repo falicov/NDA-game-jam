@@ -1,31 +1,39 @@
 extends Button
 
-#var node_a = get_parent().get_node("root_scene")
-var threshold = 50000
-var money_temp = 50000
+const threshold = 50000
+var root
+
+func _ready() -> void:
+	root = get_tree().root
 
 func _on_pressed() -> void:
-	#SceneManagement.setup_core_scenes()
-	#root.add_child(SceneManagement.dialogic)
-	#root.remove_child(SceneManagement.title_screen)
-	get_tree().change_scene_to_file("res://screens/dialogic.tscn")
+	SceneManagement.setup_core_scenes()
+	root.add_child(SceneManagement.dialogic)
+	root.remove_child(SceneManagement.title_screen)
+	#get_tree().change_scene_to_file("res://screens/dialogic.tscn")
 	Dialogic.start("Introduction")
 	Dialogic.signal_event.connect(_on_signal)
 
-func _on_signal(signal_passed_in):
+func _on_signal(signal_passed_in) -> void:
 	match signal_passed_in:
 		"Tutorial":
-			get_tree().change_scene_to_file("res://screens/map_screen.tscn")
+			root.add_child(SceneManagement.map_screen)
+			root.remove_child(SceneManagement.dialogic)
+			#get_tree().change_scene_to_file("res://screens/map_screen.tscn")
 			Dialogic.start("Tutorial")
 		"End":
-			get_tree().change_scene_to_file("res://screens/map_screen.tscn")
+			root.add_child(SceneManagement.map_screen)
+			root.remove_child(SceneManagement.dialogic)
+			#get_tree().change_scene_to_file("res://screens/map_screen.tscn")
 		"Start":
-			get_tree().change_scene_to_file("res://screens/dialogic.tscn")
+			root.add_child(SceneManagement.dialogic)
+			root.remove_child(SceneManagement.map_screen)
+			#get_tree().change_scene_to_file("res://screens/dialogic.tscn")
 			Dialogic.start("Day")
 		"Final":
 			#var node_a = get_parent().get_node("root_scene")
-			if (money_temp >= threshold):
-				if (money_temp > threshold * 2):
+			if (GameManager.money >= threshold):
+				if (GameManager.money > threshold * 2):
 					Dialogic.VAR.ending = 4
 				else:
 					var ending_dict = {
@@ -44,5 +52,7 @@ func _on_signal(signal_passed_in):
 							Dialogic.VAR.ending = 3
 			else:
 				Dialogic.VAR.ending = 0
-			get_tree().change_scene_to_file("res://screens/dialogic.tscn")
+			root.add_child(SceneManagement.dialogic)
+			root.remove_child(SceneManagement.map_screen)
+			#get_tree().change_scene_to_file("res://screens/dialogic.tscn")
 			Dialogic.start("Endings")
