@@ -68,5 +68,6 @@ offset_bottom = 23.0
 text = "$X"
 horizontal_alignment = 1
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="HBoxContainer/DecrementButton" to="." method="decrement"]
 [connection signal="pressed" from="HBoxContainer/IncrementButton" to="." method="increment"]
