@@ -20,11 +20,13 @@ func setup() -> void:
 	if(!sellable):
 		sellButton.free()
 	hide()
+	if resourceName != null && GameManager.resourceDict[resourceName].amount > 0:
+		show()
 
 func _on_tree_entered() -> void:
-	if resourceName == null || hidden && GameManager.resourceDict[resourceName].amount >0:
+	if resourceName != null && GameManager.resourceDict[resourceName].amount > 0:
 		show()
-	amountDisplay.text = str(GameManager.resourceDict[resourceName].amount)
+		amountDisplay.text = str(GameManager.resourceDict[resourceName].amount)
 
 func increment() -> void:
 	amountDisplay.text = str(GameManager.buyResource(resourceName))

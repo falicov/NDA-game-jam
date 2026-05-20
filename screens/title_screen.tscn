@@ -38,7 +38,7 @@ theme_override_font_sizes/font_size = 70
 text = "Digging the EnMINEroment"
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=287753575]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=287753575 node_paths=PackedStringArray("title_screen")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -46,6 +46,7 @@ theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "     Start     "
 script = ExtResource("2_ak2if")
+title_screen = NodePath("../..")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]

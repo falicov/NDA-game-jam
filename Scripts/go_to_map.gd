@@ -4,6 +4,6 @@ extends Button
 func _pressed() -> void:
 	var root = get_tree().root
 	SceneManagement.buy_sell = buy_sell
-	SceneManagement.setup_core_scenes()
+	#SceneManagement.setup_core_scenes()
 	root.add_child(SceneManagement.map_screen)
 	root.remove_child(SceneManagement.buy_sell)

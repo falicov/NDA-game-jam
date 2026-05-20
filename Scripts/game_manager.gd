@@ -21,9 +21,10 @@ var resourceDict:Dictionary[String, game_resource] = {
 	"copper":game_resource.new("copper", 10, false)
 	}
 
-var money:int = 20
+var money:int = 0
 
 var current_day:int = 1
+const last_day = 5
 
 var miners:Array = []
 var miner_class = preload("res://miner.tscn")

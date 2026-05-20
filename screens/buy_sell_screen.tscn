@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfs42o4ondvlt" path="res://UI_Objects/money_label.tscn" id="4_e8uf4"]
 [ext_resource type="Script" uid="uid://d02o1cs1m8335" path="res://Scripts/end_day.gd" id="4_n8pqw"]
 [ext_resource type="Script" uid="uid://dg83uumigogom" path="res://Scripts/goal_label.gd" id="5_vf0d0"]
-[ext_resource type="Script" uid="uid://dpsf0oltnexv0" path="res://screens/next_day.gd" id="7_jy8xd"]
+[ext_resource type="Script" uid="uid://dpsf0oltnexv0" path="res://Scripts/next_day.gd" id="7_jy8xd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf0d0"]
 bg_color = Color(0.9607843, 0, 0.35686275, 1)

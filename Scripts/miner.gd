@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
 @export var map:Map
 @export var map_screen_manager:MapScreenManager
@@ -7,7 +7,7 @@ var _current_tile:Vector2i
 var mining_tile:Vector2i
 
 #move speed
-var _speed = 100 #per second
+var _speed = 150 #per second
 
 var _resource_dict:Dictionary[String, int]
 var _time_to_mine = 0

@@ -10,7 +10,7 @@ var map_playing:bool
 var miner = preload("res://miner.tscn")
 
 var start_time:float
-var time_in_day:float = 10000 #in milliseconds (subtract 3 0s to get sec)
+var time_in_day:float = 15000 #in milliseconds (subtract 3 0s to get sec)
 
 
 
@@ -34,7 +34,10 @@ func _process(delta: float) -> void:
 			map_playing = false
 			viewing_gui.show()
 			playing_gui.hide()
-			print(GameManager.resourceDict["coal"].amount)
+			var root = get_tree().root
+			root.add_child(SceneManagement.dialogic)
+			Dialogic.start("Day")
+			root.remove_child(self)
 			#transition away from map here
 	
 

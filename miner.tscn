@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ddkayrr7qqfjq"]
 
 [ext_resource type="Script" uid="uid://b7t3fajq5njfu" path="res://Scripts/miner.gd" id="1_jkhbc"]
+[ext_resource type="Texture2D" uid="uid://nnjb64rnd87x" path="res://assets/Miner.png" id="1_qsadh"]
 
-[node name="Miner" type="AnimatedSprite2D" unique_id=709305928]
+[node name="Miner" type="Sprite2D" unique_id=2027709818]
+texture = ExtResource("1_qsadh")
 script = ExtResource("1_jkhbc")

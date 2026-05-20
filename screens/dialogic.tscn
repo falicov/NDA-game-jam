@@ -3,7 +3,58 @@
 [sub_resource type="GDScript" id="GDScript_l32jc"]
 script/source = "extends Node2D
 
+const threshold = 60
+var root
 
+func _ready() -> void:
+	root = get_tree().root
+	Dialogic.signal_event.connect(_on_signal)
+	#Dialogic.start(\"Day\")
+	#^ for testing
+
+
+func _on_signal(signal_passed_in) -> void:
+	match signal_passed_in:
+		\"Tutorial\":
+			root.add_child(SceneManagement.map_screen)
+			SceneManagement.map_screen.start_playing()
+			root.remove_child(SceneManagement.dialogic)
+		\"End\":
+			root.add_child(SceneManagement.buy_sell)
+			root.remove_child(SceneManagement.dialogic)
+			#get_tree().change_scene_to_file(\"res://screens/map_screen.tscn\")
+		\"Start\":
+			#FYI: This is currently unused in my scripts
+			root.add_child(SceneManagement.dialogic)
+			root.remove_child(SceneManagement.map_screen)
+			#get_tree().change_scene_to_file(\"res://screens/dialogic.tscn\")
+			Dialogic.start(\"Day\")
+		\"Final\":
+			#var node_a = get_parent().get_node(\"root_scene\")
+			if (GameManager.money >= threshold):
+				if (GameManager.money > threshold * 2):
+					Dialogic.VAR.ending = 4
+				else:
+					var ending_dict = {
+						\"Narcisa\" : Dialogic.VAR.narcisa_s,
+						\"Rico\" : Dialogic.VAR.rico_s,
+						\"Vera\" : Dialogic.VAR.vera_s
+					}
+					var highest_points = ending_dict.values().max()
+					var which_ending = ending_dict.find_key(highest_points)
+					match which_ending: 
+						\"Narcisa\":
+							Dialogic.VAR.ending = 1
+						\"Rico\":
+							Dialogic.VAR.ending = 2
+						\"Vera\":
+							Dialogic.VAR.ending = 3
+			else:
+				Dialogic.VAR.ending = 0
+			#root.add_child(SceneManagement.dialogic)
+			#root.remove_child(SceneManagement.map_screen)
+			#get_tree().change_scene_to_file(\"res://screens/dialogic.tscn\")
+			#Dialogic.start(\"Endings\")
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#Dialogic.start(\"Introduction\")
